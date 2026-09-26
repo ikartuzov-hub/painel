@@ -1,0 +1,104 @@
+/* Painel de Apoios — shared styles (all surfaces). Colours come from tokens.css only. */
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-text-size-adjust:100%}
+body{line-height:1.5;font-size:16px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- top bar (route-archive §7.3 + §7.8) ---------- */
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:10px 14px 10px 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand .mark{width:28px;height:28px;flex:none}
+.brand .wm{font-weight:700;font-size:17px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topctrl{display:flex;align-items:center;gap:8px}
+.langwrap{position:relative}
+.rnd{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  font:700 13px/1 var(--sans);letter-spacing:.04em;cursor:pointer;display:grid;place-items:center;padding:0}
+.rnd:hover{border-color:var(--accent)}
+.menu{position:absolute;right:0;top:48px;min-width:170px;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column;z-index:30}
+.menu[hidden]{display:none}
+.menu button{all:unset;cursor:pointer;padding:9px 12px;border-radius:9px;font-size:15px}
+.menu button b{display:inline-block;width:30px;color:var(--muted)}
+.menu button:hover,.menu button:focus-visible{background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.menu button.on,.menu button.on b{color:var(--accent);font-weight:700}
+
+/* ---------- footer (launch standard §2) ---------- */
+.foot{text-align:center;padding:28px 16px 64px;color:var(--muted);font-size:15px}
+.foot .disc{max-width:640px;margin:0 auto 18px;font-size:14px;line-height:1.5}
+.foot .copy{margin:0}
+.foot a{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;display:inline-block;padding:8px 4px;color:var(--ink)}
+
+/* ---------- split-flap ---------- */
+.flap{display:inline-flex;flex-wrap:wrap;gap:.08em;font-family:var(--mono);font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums;perspective:400px;vertical-align:middle}
+.fc{position:relative;display:inline-grid;place-items:center;width:.82em;height:1.28em;background:var(--flap);
+  color:var(--flap-ink);border-radius:.14em;overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 1px 0 rgba(0,0,0,.35)}
+.fc::before{content:"";position:absolute;inset:0 0 50% 0;background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,0))}
+.fc::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--flap-hinge);transform:translateY(-.5px)}
+.fc.sp{background:color-mix(in srgb,var(--flap) 45%,transparent);box-shadow:none}
+.flap .fc{color:var(--flap-ink);font-size:1em}
+.flap .fch{display:block;transform-origin:50% 50%;backface-visibility:hidden;color:inherit!important;font-size:1em!important}
+.fc.f .fch{animation:flipIn .085s ease-out}
+@keyframes flipIn{from{transform:rotateX(-88deg);opacity:.35}to{transform:none;opacity:1}}
+.st-open .fc{color:var(--st-open)} .st-soon .fc{color:var(--st-soon)} .st-new .fc{color:var(--st-new)}
+.st-unv .fc{color:var(--st-unv)} .st-closed .fc{color:var(--st-closed)}
+
+/* status chip (word always present — colour is never the only carrier) */
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 9px;border-radius:999px;background:var(--flap);color:var(--flap-ink);white-space:nowrap}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.chip.st-open{color:var(--st-open)} .chip.st-soon{color:var(--st-soon)} .chip.st-new{color:var(--st-new)}
+.chip.st-unv{color:var(--st-unv)} .chip.st-closed{color:#AEB8C9}
+
+/* ---------- odometer ---------- */
+.odo{display:inline-flex;font-family:var(--mono);font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.odo-d{display:inline-block;height:1em;overflow:hidden}
+.odo-c{display:flex;flex-direction:column;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.odo-c span{height:1em}
+
+/* ---------- countdown ring ---------- */
+.ring{width:84px;height:84px;flex:none}
+.ring-bg{fill:none;stroke:var(--line);stroke-width:8}
+.ring-fg{fill:none;stroke:var(--muted);stroke-width:8;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;
+  stroke-dasharray:var(--c);stroke-dashoffset:var(--c);animation:ringFill 1.4s .2s cubic-bezier(.2,.8,.2,1) forwards}
+.ring.hot .ring-fg{stroke:var(--accent)}
+.ring-n{font:800 30px var(--mono);fill:var(--ink);text-anchor:middle;dominant-baseline:middle}
+.ring-u{font:600 11px var(--sans);fill:var(--muted);text-anchor:middle;text-transform:uppercase;letter-spacing:.08em}
+@keyframes ringFill{to{stroke-dashoffset:var(--f)}}
+
+/* ---------- map ---------- */
+.map{width:100%;height:auto;overflow:visible}
+.map .isle{fill:transparent;stroke:var(--accent);stroke-width:.7;stroke-linejoin:round;
+  stroke-dasharray:var(--len,400);stroke-dashoffset:var(--len,400)}
+.map .isle.go{animation:draw 2.2s cubic-bezier(.6,0,.2,1) forwards,isleFill .8s 2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes isleFill{to{fill:color-mix(in srgb,var(--accent) 18%,transparent)}}
+.map .pulse{opacity:0}
+.map.lit .pulse{animation:pIn .4s calc(2.1s + var(--i)*.18s) forwards}
+.map .pulse circle{fill:var(--st-open)}
+.map .pulse .pr{fill:none;stroke:var(--st-open);stroke-width:.5;transform-box:fill-box;transform-origin:center;
+  animation:ping 2.4s calc(2.3s + var(--i)*.18s) infinite}
+@keyframes pIn{to{opacity:1}}
+@keyframes ping{0%{transform:scale(1);opacity:.9}100%{transform:scale(4.2);opacity:0}}
+
+/* ---------- common blocks ---------- */
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:999px;
+  border:1px solid var(--accent);background:var(--accent);color:#fff;font:700 16px/1.2 var(--sans);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.src a,a.src{color:var(--accent);text-underline-offset:3px}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .map .isle{stroke-dashoffset:0;fill:color-mix(in srgb,var(--accent) 18%,transparent)}
+  .map .pulse{opacity:1}
+  .ring-fg{stroke-dashoffset:var(--f)}
+}

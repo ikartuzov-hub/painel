@@ -1,0 +1,215 @@
+{
+ "name": "Painel de Apoios",
+ "slogan": "Tudo o que está aberto, num só painel",
+ "madeBy": "feito por SeedWave",
+ "meta": {
+  "title": "Painel de Apoios — tudo o que está aberto, num só painel",
+  "desc": "Apoios, prazos e seminários para empresas da Madeira, verificados na fonte oficial e com a data de verificação em cada linha. Gratuito, sem conta e sem publicidade.",
+  "flyerTitle": "Painel de Apoios — um ecrã grátis para o seu escritório, associação ou hotel",
+  "flyerDesc": "Um painel vivo com os apoios abertos, os prazos e os seminários da semana para empresas da Madeira. Liga-se num minuto, sem conta e sem publicidade."
+ },
+ "a11y": {
+  "lang": "Idioma",
+  "theme": "Tema claro ou escuro"
+ },
+ "flap": {
+  "open": "ABERTO",
+  "soon": "FECHA EM {n} DIAS",
+  "today": "FECHA HOJE",
+  "tomorrow": "FECHA AMANHÃ",
+  "new": "NOVO AVISO",
+  "unv": "NÃO VERIFICADO",
+  "closed": "FECHADO"
+ },
+ "status": {
+  "open": "Aberto",
+  "soon": "Fecha em breve",
+  "new": "Novo aviso",
+  "unv": "Não foi possível verificar",
+  "closed": "Fechado"
+ },
+ "verified": "Verificado em {d}",
+ "unit": {
+  "days": "dias",
+  "daysOne": "dia"
+ },
+ "level": {
+  "regional": "Regional",
+  "nacional": "Nacional",
+  "fiscal": "Benefício fiscal"
+ },
+ "aud": {
+  "pme": "PME",
+  "empresas": "Empresas",
+  "particulares": "Particulares"
+ },
+ "prof": {
+  "label": "O seu setor",
+  "todos": "Todos",
+  "horeca": "Hotelaria e restauração",
+  "micro": "Microempresas",
+  "energia": "Energia e mobilidade elétrica",
+  "digital": "Digital e serviços internacionais"
+ },
+ "deadline": "Prazo: {d}",
+ "noDeadline": "Sem prazo · em vigor",
+ "source": "Fonte: {s}",
+ "fmt": {
+  "online": "Online",
+  "onsite_funchal": "Presencial · Funchal",
+  "onsite_mainland": "Presencial · Continente",
+  "hybrid": "Híbrido",
+  "unknown": "A confirmar"
+ },
+ "k": {
+  "s1": "Abertos agora",
+  "countOne": "programa aberto",
+  "countMany": "programas abertos",
+  "allRegion": "Toda a Região · Madeira e Porto Santo",
+  "s2": "Fecha em breve",
+  "s2sub": "Prazos nos próximos 14 dias",
+  "s2none": "Nenhum prazo nos próximos 14 dias.",
+  "s2next": "Próximos prazos",
+  "s3": "Seminários da semana",
+  "s3next": "Próximos seminários",
+  "s3none": "Sem seminários anunciados de momento.",
+  "s4": "Mobilidade",
+  "s5": "O que mudou",
+  "s5sub": "Mudanças de estado nos últimos 7 dias",
+  "s5none": "Sem mudanças de estado esta semana.",
+  "scan": "Veja no telemóvel",
+  "scanSub": "Os mesmos dados, com ligação à fonte",
+  "updated": "Atualizado às {t}",
+  "offline": "Sem ligação · dados de {t}",
+  "checkedH": "Verificado há {h} h",
+  "checkedToday": "Verificado hoje",
+  "checkedOn": "Verificado em {d}",
+  "sources": "fontes",
+  "was": "antes",
+  "now": "agora",
+  "register": "Inscrição"
+ },
+ "mob": {
+  "board": "Partidas",
+  "boardStatus": "REEMBOLSO SSM",
+  "ssmTitle": "Subsídio Social de Mobilidade",
+  "ssmText": "Os residentes na Madeira recuperam parte do custo das viagens entre a ilha e o Continente ou os Açores. Em cada pedido fica a seu cargo um copagamento de {c} € ({s} € para estudantes).",
+  "ssmSource": "Valores do guia Damos o Caminho, atualizado a {d}.",
+  "ssmSteps": "Como pedir em 5 passos",
+  "ev": "Veículos elétricos"
+ },
+ "phone": {
+  "kicker": "Madeira · apoios às empresas",
+  "h1": "O que está aberto para empresas na Madeira",
+  "lead": "Cada linha foi verificada na fonte oficial e tem a data dessa verificação. Sem conta, sem publicidade.",
+  "countOne": "programa aberto agora",
+  "countMany": "programas abertos agora",
+  "open": "Abertos agora",
+  "noneForProfile": "Neste setor não há programas abertos neste momento. Veja «Todos».",
+  "soon": "Fecha em breve",
+  "seminars": "Seminários",
+  "mobility": "Mobilidade",
+  "changes": "O que mudou",
+  "more": "Ver detalhes",
+  "less": "Fechar",
+  "readSource": "Ler a fonte oficial",
+  "cta": "Verificar se a minha empresa se qualifica",
+  "ctaNote": "Abre o verificador nAm no SeedWave Hub.",
+  "share": "Enviar a um colega",
+  "createTitle": "Quer este painel no seu escritório?",
+  "createText": "Ecrã na receção, folha A4 para o balcão ou widget no seu site. Liga-se num minuto, grátis.",
+  "create": "Criar o seu painel",
+  "about": "Como funciona"
+ },
+ "share": {
+  "btn": "Enviar a um amigo",
+  "text": "Painel de Apoios: tudo o que está aberto para empresas na Madeira, num só painel. Verificado na fonte, grátis.",
+  "program": "Vi isto no Painel de Apoios:",
+  "copied": "Copiado ✓"
+ },
+ "setup": {
+  "title": "Criar o seu painel",
+  "lead": "Quatro escolhas e recebe as ligações. Sem conta, sem e-mail: a configuração fica no próprio endereço.",
+  "name": "Nome do seu escritório, associação ou hotel",
+  "namePh": "Ex.: Contabilidade Silva",
+  "lang": "Idioma do painel",
+  "profile": "Setor do seu público",
+  "color": "Cor de destaque",
+  "colorDefault": "Cobalto (padrão)",
+  "go": "Obter as ligações",
+  "kiosk": "Ecrã (modo quiosque)",
+  "kioskNote": "Abra num televisor ou monitor em ecrã inteiro. Muda de ecrã a cada 25 segundos e funciona sem ligação com os últimos dados.",
+  "print": "Folha A4 da semana",
+  "printNote": "Abra e imprima a partir do navegador.",
+  "embed": "Widget para o seu site",
+  "embedNote": "Cole este código na sua página.",
+  "copy": "Copiar",
+  "open": "Abrir",
+  "qr": "QR para o telemóvel",
+  "qrDownload": "Descarregar QR (PNG)",
+  "note": "O seu nome aparece no canto do painel e marca as ligações de saída, para saber que chegaram por si. Não há rastreadores nem estatísticas de terceiros.",
+  "needName": "Escreva um nome para o painel."
+ },
+ "print": {
+  "week": "Semana de {d}",
+  "programs": "Programas abertos",
+  "deadlines": "Prazos próximos",
+  "seminars": "Seminários",
+  "scan": "Aponte a câmara para ver no telemóvel",
+  "printBtn": "Imprimir",
+  "col": {
+   "program": "Programa",
+   "status": "Estado",
+   "deadline": "Prazo",
+   "source": "Fonte"
+  }
+ },
+ "embed": {
+  "more": "Ver o painel completo"
+ },
+ "flyer": {
+  "kicker": "Grátis · sem conta · sem publicidade",
+  "h1": "Um painel vivo com tudo o que está aberto para as empresas da Madeira",
+  "lead": "Apoios, prazos e seminários da semana, verificados na fonte oficial. Para o ecrã da receção, o balcão ou o seu site.",
+  "whoTitle": "Para quem",
+  "who": [
+   [
+    "Gabinetes de contabilidade",
+    "Os clientes veem na sala de espera o que abriu e o que está a fechar — e perguntam."
+   ],
+   [
+    "Associações empresariais",
+    "Um ecrã e uma folha semanal para os associados, sem trabalho de redação."
+   ],
+   [
+    "Hotéis e restauração",
+    "O dono sabe a tempo dos apoios à eficiência energética e à contratação."
+   ]
+  ],
+  "howTitle": "Como funciona",
+  "how": [
+   [
+    "Escreve o nome",
+    "Escolhe idioma, setor e cor. Não pedimos conta nem e-mail."
+   ],
+   [
+    "Recebe três ligações",
+    "Ecrã em modo quiosque, folha A4 da semana e widget para o site."
+   ],
+   [
+    "O painel atualiza-se sozinho",
+    "Sem ligação, mostra os últimos dados e diz de quando são."
+   ]
+  ],
+  "trustTitle": "Porque pode confiar",
+  "trust": [
+   "Só publicamos o que tem aviso, decreto ou portal oficial.",
+   "Cada linha tem a data de verificação e a ligação ao texto original em português.",
+   "Se não conseguimos verificar, dizemo-lo — nunca escrevemos «fechado» por palpite.",
+   "Resumo informativo, não é consultoria."
+  ],
+  "cta": "Criar o seu painel",
+  "see": "Ver o painel"
+ },
+ "disclaimer": "Resumo informativo, não é consultoria. As condições que contam são as do texto oficial de cada aviso."
+}

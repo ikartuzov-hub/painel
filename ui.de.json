@@ -1,0 +1,215 @@
+{
+ "name": "Painel de Apoios",
+ "slogan": "Alles, was offen ist, auf einer Tafel",
+ "madeBy": "gemacht von SeedWave",
+ "meta": {
+  "title": "Painel de Apoios — alles, was offen ist, auf einer Tafel",
+  "desc": "Förderprogramme, Fristen und Seminare für Unternehmen auf Madeira, an der offiziellen Quelle geprüft, mit Prüfdatum in jeder Zeile. Kostenlos, ohne Konto, ohne Werbung.",
+  "flyerTitle": "Painel de Apoios — ein kostenloser Bildschirm für Büro, Verband oder Hotel",
+  "flyerDesc": "Eine Live-Tafel mit offenen Förderprogrammen, Fristen und Seminaren der Woche für Unternehmen auf Madeira. In einer Minute eingerichtet, ohne Konto, ohne Werbung."
+ },
+ "a11y": {
+  "lang": "Sprache",
+  "theme": "Helles oder dunkles Design"
+ },
+ "flap": {
+  "open": "OFFEN",
+  "soon": "ENDET IN {n} TAGEN",
+  "today": "ENDET HEUTE",
+  "tomorrow": "ENDET MORGEN",
+  "new": "NEUER AUFRUF",
+  "unv": "NICHT GEPRÜFT",
+  "closed": "GESCHLOSSEN"
+ },
+ "status": {
+  "open": "Offen",
+  "soon": "Endet bald",
+  "new": "Neuer Aufruf",
+  "unv": "Nicht prüfbar",
+  "closed": "Geschlossen"
+ },
+ "verified": "Geprüft am {d}",
+ "unit": {
+  "days": "Tage",
+  "daysOne": "Tag"
+ },
+ "level": {
+  "regional": "Regional",
+  "nacional": "National",
+  "fiscal": "Steuervorteil"
+ },
+ "aud": {
+  "pme": "KMU",
+  "empresas": "Unternehmen",
+  "particulares": "Privatpersonen"
+ },
+ "prof": {
+  "label": "Ihre Branche",
+  "todos": "Alle",
+  "horeca": "Hotellerie und Gastronomie",
+  "micro": "Kleinstunternehmen",
+  "energia": "Energie und E-Mobilität",
+  "digital": "Digitales und internationale Dienste"
+ },
+ "deadline": "Frist: {d}",
+ "noDeadline": "Ohne Frist · in Kraft",
+ "source": "Quelle: {s}",
+ "fmt": {
+  "online": "Online",
+  "onsite_funchal": "Vor Ort · Funchal",
+  "onsite_mainland": "Vor Ort · Festland",
+  "hybrid": "Hybrid",
+  "unknown": "Wird bestätigt"
+ },
+ "k": {
+  "s1": "Jetzt offen",
+  "countOne": "Programm offen",
+  "countMany": "Programme offen",
+  "allRegion": "Ganze Region · Madeira und Porto Santo",
+  "s2": "Endet bald",
+  "s2sub": "Fristen in den nächsten 14 Tagen",
+  "s2none": "Keine Fristen in den nächsten 14 Tagen.",
+  "s2next": "Nächste Fristen",
+  "s3": "Seminare der Woche",
+  "s3next": "Nächste Seminare",
+  "s3none": "Derzeit keine Seminare angekündigt.",
+  "s4": "Mobilität",
+  "s5": "Was sich geändert hat",
+  "s5sub": "Statusänderungen der letzten 7 Tage",
+  "s5none": "Diese Woche keine Statusänderungen.",
+  "scan": "Auf dem Handy ansehen",
+  "scanSub": "Dieselben Daten, mit Link zur Quelle",
+  "updated": "Aktualisiert um {t}",
+  "offline": "Offline · Daten von {t}",
+  "checkedH": "Vor {h} Std. geprüft",
+  "checkedToday": "Heute geprüft",
+  "checkedOn": "Geprüft am {d}",
+  "sources": "Quellen",
+  "was": "vorher",
+  "now": "jetzt",
+  "register": "Anmeldung"
+ },
+ "mob": {
+  "board": "Abflüge",
+  "boardStatus": "SSM-ERSTATTUNG",
+  "ssmTitle": "Mobilitätszuschuss (SSM)",
+  "ssmText": "Einwohner Madeiras bekommen einen Teil der Flugkosten zwischen der Insel und dem Festland oder den Azoren zurück. Pro Antrag tragen Sie einen Eigenanteil von {c} € ({s} € für Studierende).",
+  "ssmSource": "Zahlen aus dem Leitfaden Damos o Caminho, Stand {d}.",
+  "ssmSteps": "So beantragen Sie in 5 Schritten",
+  "ev": "Elektrofahrzeuge"
+ },
+ "phone": {
+  "kicker": "Madeira · Unternehmensförderung",
+  "h1": "Was für Unternehmen auf Madeira gerade offen ist",
+  "lead": "Jede Zeile wurde an der offiziellen Quelle geprüft und trägt das Prüfdatum. Ohne Konto, ohne Werbung.",
+  "countOne": "Programm jetzt offen",
+  "countMany": "Programme jetzt offen",
+  "open": "Jetzt offen",
+  "noneForProfile": "Für diese Branche ist gerade kein Programm offen. Siehe «Alle».",
+  "soon": "Endet bald",
+  "seminars": "Seminare",
+  "mobility": "Mobilität",
+  "changes": "Was sich geändert hat",
+  "more": "Details",
+  "less": "Schließen",
+  "readSource": "Offizielle Quelle lesen",
+  "cta": "Prüfen, ob mein Unternehmen passt",
+  "ctaNote": "Öffnet den nAm-Check im SeedWave Hub.",
+  "share": "An Kollegen senden",
+  "createTitle": "Diese Tafel in Ihrem Büro?",
+  "createText": "Bildschirm am Empfang, A4-Blatt für die Theke oder Widget auf Ihrer Website. In einer Minute eingerichtet, kostenlos.",
+  "create": "Eigene Tafel erstellen",
+  "about": "So funktioniert es"
+ },
+ "share": {
+  "btn": "An Freunde senden",
+  "text": "Painel de Apoios: alles, was für Unternehmen auf Madeira offen ist, auf einer Tafel. An der Quelle geprüft, kostenlos.",
+  "program": "Gesehen auf Painel de Apoios:",
+  "copied": "Kopiert ✓"
+ },
+ "setup": {
+  "title": "Eigene Tafel erstellen",
+  "lead": "Vier Angaben, dann bekommen Sie die Links. Ohne Konto, ohne E-Mail: Die Einstellungen stecken im Link selbst.",
+  "name": "Name Ihres Büros, Verbands oder Hotels",
+  "namePh": "z. B. Contabilidade Silva",
+  "lang": "Sprache der Tafel",
+  "profile": "Branche Ihres Publikums",
+  "color": "Akzentfarbe",
+  "colorDefault": "Kobalt (Standard)",
+  "go": "Links erhalten",
+  "kiosk": "Bildschirm (Kioskmodus)",
+  "kioskNote": "Auf einem Fernseher oder Monitor im Vollbild öffnen. Wechselt alle 25 Sekunden und läuft offline mit den letzten Daten weiter.",
+  "print": "A4-Wochenblatt",
+  "printNote": "Öffnen und aus dem Browser drucken.",
+  "embed": "Widget für Ihre Website",
+  "embedNote": "Diesen Code in Ihre Seite einfügen.",
+  "copy": "Kopieren",
+  "open": "Öffnen",
+  "qr": "QR fürs Handy",
+  "qrDownload": "QR herunterladen (PNG)",
+  "note": "Ihr Name steht in der Ecke der Tafel und markiert ausgehende Links, damit Sie sehen, dass Besucher über Sie kamen. Keine Tracker, keine Fremdanalyse.",
+  "needName": "Bitte geben Sie einen Namen für die Tafel ein."
+ },
+ "print": {
+  "week": "Woche vom {d}",
+  "programs": "Offene Programme",
+  "deadlines": "Nächste Fristen",
+  "seminars": "Seminare",
+  "scan": "Kamera darauf richten, um es auf dem Handy zu sehen",
+  "printBtn": "Drucken",
+  "col": {
+   "program": "Programm",
+   "status": "Status",
+   "deadline": "Frist",
+   "source": "Quelle"
+  }
+ },
+ "embed": {
+  "more": "Ganze Tafel ansehen"
+ },
+ "flyer": {
+  "kicker": "Kostenlos · ohne Konto · ohne Werbung",
+  "h1": "Eine Live-Tafel mit allem, was für Unternehmen auf Madeira offen ist",
+  "lead": "Förderprogramme, Fristen und Seminare der Woche, an der offiziellen Quelle geprüft. Für den Bildschirm am Empfang, die Theke oder Ihre Website.",
+  "whoTitle": "Für wen",
+  "who": [
+   [
+    "Steuerbüros",
+    "Kunden sehen im Wartebereich, was geöffnet hat und was bald endet — und fragen nach."
+   ],
+   [
+    "Unternehmensverbände",
+    "Ein Bildschirm und ein Wochenblatt für Mitglieder, ohne Redaktionsarbeit."
+   ],
+   [
+    "Hotels und Restaurants",
+    "Inhaber erfahren rechtzeitig von Förderungen für Energieeffizienz und Einstellungen."
+   ]
+  ],
+  "howTitle": "So funktioniert es",
+  "how": [
+   [
+    "Namen eingeben",
+    "Sprache, Branche und Farbe wählen. Kein Konto, keine E-Mail."
+   ],
+   [
+    "Drei Links erhalten",
+    "Kiosk-Bildschirm, A4-Wochenblatt und Website-Widget."
+   ],
+   [
+    "Aktualisiert sich selbst",
+    "Offline zeigt die Tafel die letzten Daten und sagt, von wann sie sind."
+   ]
+  ],
+  "trustTitle": "Warum Sie ihr vertrauen können",
+  "trust": [
+   "Wir veröffentlichen nur, was einen offiziellen Aufruf, ein Gesetz oder ein Portal hat.",
+   "Jede Zeile trägt das Prüfdatum und den Link zum portugiesischen Originaltext.",
+   "Konnten wir etwas nicht prüfen, sagen wir es — «geschlossen» schreiben wir nie auf Verdacht.",
+   "Informative Übersicht, keine Beratung."
+  ],
+  "cta": "Eigene Tafel erstellen",
+  "see": "Tafel ansehen"
+ },
+ "disclaimer": "Informative Übersicht, keine Beratung. Es gelten die Bedingungen im offiziellen Text des jeweiligen Aufrufs."
+}

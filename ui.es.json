@@ -1,0 +1,215 @@
+{
+ "name": "Painel de Apoios",
+ "slogan": "Todo lo que está abierto, en un solo panel",
+ "madeBy": "hecho por SeedWave",
+ "meta": {
+  "title": "Painel de Apoios — todo lo que está abierto, en un solo panel",
+  "desc": "Ayudas, plazos y seminarios para empresas de Madeira, verificados en la fuente oficial y con la fecha de verificación en cada línea. Gratis, sin cuenta y sin publicidad.",
+  "flyerTitle": "Painel de Apoios — una pantalla gratuita para su despacho, asociación u hotel",
+  "flyerDesc": "Un panel en vivo con las ayudas abiertas, los plazos y los seminarios de la semana para empresas de Madeira. Se configura en un minuto, sin cuenta y sin publicidad."
+ },
+ "a11y": {
+  "lang": "Idioma",
+  "theme": "Tema claro u oscuro"
+ },
+ "flap": {
+  "open": "ABIERTO",
+  "soon": "CIERRA EN {n} DÍAS",
+  "today": "CIERRA HOY",
+  "tomorrow": "CIERRA MAÑANA",
+  "new": "NUEVA CONVOCATORIA",
+  "unv": "NO VERIFICADO",
+  "closed": "CERRADO"
+ },
+ "status": {
+  "open": "Abierto",
+  "soon": "Cierra pronto",
+  "new": "Nueva convocatoria",
+  "unv": "No se pudo verificar",
+  "closed": "Cerrado"
+ },
+ "verified": "Verificado el {d}",
+ "unit": {
+  "days": "días",
+  "daysOne": "día"
+ },
+ "level": {
+  "regional": "Regional",
+  "nacional": "Nacional",
+  "fiscal": "Beneficio fiscal"
+ },
+ "aud": {
+  "pme": "Pymes",
+  "empresas": "Empresas",
+  "particulares": "Particulares"
+ },
+ "prof": {
+  "label": "Su sector",
+  "todos": "Todos",
+  "horeca": "Hostelería y restauración",
+  "micro": "Microempresas",
+  "energia": "Energía y movilidad eléctrica",
+  "digital": "Digital y servicios internacionales"
+ },
+ "deadline": "Plazo: {d}",
+ "noDeadline": "Sin plazo · en vigor",
+ "source": "Fuente: {s}",
+ "fmt": {
+  "online": "En línea",
+  "onsite_funchal": "Presencial · Funchal",
+  "onsite_mainland": "Presencial · continente",
+  "hybrid": "Híbrido",
+  "unknown": "Por confirmar"
+ },
+ "k": {
+  "s1": "Abiertos ahora",
+  "countOne": "programa abierto",
+  "countMany": "programas abiertos",
+  "allRegion": "Toda la Región · Madeira y Porto Santo",
+  "s2": "Cierra pronto",
+  "s2sub": "Plazos en los próximos 14 días",
+  "s2none": "No hay plazos en los próximos 14 días.",
+  "s2next": "Próximos plazos",
+  "s3": "Seminarios de la semana",
+  "s3next": "Próximos seminarios",
+  "s3none": "No hay seminarios anunciados por ahora.",
+  "s4": "Movilidad",
+  "s5": "Qué cambió",
+  "s5sub": "Cambios de estado en los últimos 7 días",
+  "s5none": "Sin cambios de estado esta semana.",
+  "scan": "Véalo en el móvil",
+  "scanSub": "Los mismos datos, con enlace a la fuente",
+  "updated": "Actualizado a las {t}",
+  "offline": "Sin conexión · datos de {t}",
+  "checkedH": "Verificado hace {h} h",
+  "checkedToday": "Verificado hoy",
+  "checkedOn": "Verificado el {d}",
+  "sources": "fuentes",
+  "was": "antes",
+  "now": "ahora",
+  "register": "Inscripción"
+ },
+ "mob": {
+  "board": "Salidas",
+  "boardStatus": "REEMBOLSO SSM",
+  "ssmTitle": "Subsidio Social de Movilidad (SSM)",
+  "ssmText": "Los residentes en Madeira recuperan parte del coste de los vuelos entre la isla y el continente o las Azores. En cada solicitud usted paga un copago de {c} € ({s} € para estudiantes).",
+  "ssmSource": "Cifras de la guía Damos o Caminho, actualizada el {d}.",
+  "ssmSteps": "Cómo solicitarlo en 5 pasos",
+  "ev": "Vehículos eléctricos"
+ },
+ "phone": {
+  "kicker": "Madeira · ayudas a empresas",
+  "h1": "Qué está abierto para las empresas en Madeira",
+  "lead": "Cada línea se verificó en la fuente oficial y lleva la fecha de esa verificación. Sin cuenta, sin publicidad.",
+  "countOne": "programa abierto ahora",
+  "countMany": "programas abiertos ahora",
+  "open": "Abiertos ahora",
+  "noneForProfile": "Ahora no hay programas abiertos para este sector. Vea «Todos».",
+  "soon": "Cierra pronto",
+  "seminars": "Seminarios",
+  "mobility": "Movilidad",
+  "changes": "Qué cambió",
+  "more": "Ver detalles",
+  "less": "Cerrar",
+  "readSource": "Leer la fuente oficial",
+  "cta": "Comprobar si mi empresa cumple",
+  "ctaNote": "Abre el verificador nAm en SeedWave Hub.",
+  "share": "Enviar a un colega",
+  "createTitle": "¿Quiere este panel en su oficina?",
+  "createText": "Pantalla en la recepción, hoja A4 para el mostrador o widget en su web. Se configura en un minuto, gratis.",
+  "create": "Crear su panel",
+  "about": "Cómo funciona"
+ },
+ "share": {
+  "btn": "Enviar a un amigo",
+  "text": "Painel de Apoios: todo lo abierto para empresas en Madeira, en un solo panel. Verificado en la fuente, gratis.",
+  "program": "Lo vi en Painel de Apoios:",
+  "copied": "Copiado ✓"
+ },
+ "setup": {
+  "title": "Crear su panel",
+  "lead": "Cuatro elecciones y recibe los enlaces. Sin cuenta ni correo: la configuración vive en el propio enlace.",
+  "name": "Nombre de su despacho, asociación u hotel",
+  "namePh": "Ej.: Contabilidade Silva",
+  "lang": "Idioma del panel",
+  "profile": "Sector de su público",
+  "color": "Color de acento",
+  "colorDefault": "Cobalto (predeterminado)",
+  "go": "Obtener los enlaces",
+  "kiosk": "Pantalla (modo quiosco)",
+  "kioskNote": "Ábralo en un televisor o monitor a pantalla completa. Cambia de pantalla cada 25 segundos y funciona sin conexión con los últimos datos.",
+  "print": "Hoja A4 de la semana",
+  "printNote": "Ábrala e imprímala desde el navegador.",
+  "embed": "Widget para su web",
+  "embedNote": "Pegue este código en su página.",
+  "copy": "Copiar",
+  "open": "Abrir",
+  "qr": "QR para el móvil",
+  "qrDownload": "Descargar QR (PNG)",
+  "note": "Su nombre aparece en la esquina del panel y marca los enlaces salientes, para saber que la visita vino por usted. Sin rastreadores ni analítica de terceros.",
+  "needName": "Escriba un nombre para el panel."
+ },
+ "print": {
+  "week": "Semana del {d}",
+  "programs": "Programas abiertos",
+  "deadlines": "Próximos plazos",
+  "seminars": "Seminarios",
+  "scan": "Apunte la cámara para verlo en el móvil",
+  "printBtn": "Imprimir",
+  "col": {
+   "program": "Programa",
+   "status": "Estado",
+   "deadline": "Plazo",
+   "source": "Fuente"
+  }
+ },
+ "embed": {
+  "more": "Ver el panel completo"
+ },
+ "flyer": {
+  "kicker": "Gratis · sin cuenta · sin publicidad",
+  "h1": "Un panel en vivo con todo lo que está abierto para las empresas de Madeira",
+  "lead": "Ayudas, plazos y seminarios de la semana, verificados en la fuente oficial. Para la pantalla de la recepción, el mostrador o su web.",
+  "whoTitle": "Para quién",
+  "who": [
+   [
+    "Despachos de contabilidad",
+    "Los clientes ven en la sala de espera qué se abrió y qué está por cerrar — y preguntan."
+   ],
+   [
+    "Asociaciones empresariales",
+    "Una pantalla y una hoja semanal para los socios, sin trabajo de redacción."
+   ],
+   [
+    "Hoteles y restauración",
+    "El propietario se entera a tiempo de las ayudas a la eficiencia energética y a la contratación."
+   ]
+  ],
+  "howTitle": "Cómo funciona",
+  "how": [
+   [
+    "Escribe el nombre",
+    "Elige idioma, sector y color. Sin cuenta ni correo."
+   ],
+   [
+    "Recibe tres enlaces",
+    "Pantalla en modo quiosco, hoja A4 semanal y widget para la web."
+   ],
+   [
+    "Se actualiza solo",
+    "Sin conexión, muestra los últimos datos e indica de cuándo son."
+   ]
+  ],
+  "trustTitle": "Por qué puede confiar",
+  "trust": [
+   "Solo publicamos lo que tiene convocatoria, ley o portal oficial detrás.",
+   "Cada línea lleva la fecha de verificación y el enlace al texto original en portugués.",
+   "Si no pudimos verificarlo, lo decimos — nunca escribimos «cerrado» por suposición.",
+   "Resumen informativo, no es asesoría."
+  ],
+  "cta": "Crear su panel",
+  "see": "Ver el panel"
+ },
+ "disclaimer": "Resumen informativo, no es asesoría. Las condiciones válidas son las del texto oficial de cada convocatoria."
+}

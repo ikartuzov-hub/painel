@@ -1,0 +1,184 @@
+{
+  "_about": "Publicly visible layer of the SeedWave subsidy sensor (Notion «Мониторинг субсидий Мадейры»). Only confidence level 1 (aviso, law, official portal). Announcements without an aviso (contour B, status 'ждём открытия') are never exported. The internal 'Условия' field is never exported; 'desc' is a short public summary written only from the official source.",
+  "snapshot": "2026-09-26",
+  "programs": [
+    {
+      "id": "m2030-2026-21",
+      "name": "Madeira 2030 · Aviso M2030-2026-21 — Eficiência energética e descarbonização das empresas",
+      "short": "EFICIÊNCIA ENERGÉTICA",
+      "level": "regional",
+      "audience": ["pme", "empresas"],
+      "profiles": ["horeca", "micro", "energia"],
+      "status": "open",
+      "lastStatus": "open",
+      "deadline": "2026-10-10",
+      "deadlineTime": "17:00",
+      "verified": "2026-09-26",
+      "source": "https://madeira.portugal2030.pt/2026/08/14/empresas-tem-ate-10-de-outubro-para-se-candidatarem-projetos-de-eficiencia-energetica-e-descarbonizacao/",
+      "sourceName": "Madeira 2030",
+      "mobility": false,
+      "desc": {
+        "pt": "Apoio a projetos de eficiência energética e descarbonização de PME e grandes empresas da Região com contabilidade organizada, até 50% do investimento consoante a dimensão da empresa e o tipo de investimento. Candidaturas no Balcão dos Fundos até 10 de outubro de 2026, às 17h00.",
+        "en": "Support for energy-efficiency and decarbonisation projects of SMEs and large companies in the Region with organised accounts, up to 50% of the investment depending on company size and type of investment. Applications via Balcão dos Fundos until 10 October 2026, 17:00.",
+        "ru": "Поддержка проектов энергоэффективности и декарбонизации МСП и крупных компаний региона с организованной бухгалтерией — до 50% инвестиций в зависимости от размера компании и типа вложений. Заявки через Balcão dos Fundos до 10 октября 2026 года, 17:00.",
+        "es": "Apoyo a proyectos de eficiencia energética y descarbonización de pymes y grandes empresas de la Región con contabilidad organizada, hasta el 50% de la inversión según el tamaño de la empresa y el tipo de inversión. Solicitudes en el Balcão dos Fundos hasta el 10 de octubre de 2026, a las 17:00.",
+        "de": "Förderung von Projekten zu Energieeffizienz und Dekarbonisierung von KMU und Großunternehmen der Region mit ordnungsgemäßer Buchführung, bis zu 50 % der Investition je nach Unternehmensgröße und Art der Investition. Anträge über den Balcão dos Fundos bis 10. Oktober 2026, 17:00 Uhr."
+      }
+    },
+    {
+      "id": "cinm-irc-5",
+      "name": "Zona Franca da Madeira (CINM) — IRC a 5%: licenciamento até 31.12.2026",
+      "short": "ZONA FRANCA IRC 5%",
+      "level": "fiscal",
+      "audience": ["empresas"],
+      "profiles": ["digital"],
+      "status": "open",
+      "lastStatus": "open",
+      "deadline": "2026-12-31",
+      "verified": "2026-09-26",
+      "source": "https://www.ibc-madeira.com/pt/tax-benefits.html",
+      "sourceName": "SDM · IBC Madeira",
+      "mobility": false,
+      "desc": {
+        "pt": "Empresas licenciadas no Centro Internacional de Negócios da Madeira até 31 de dezembro de 2026 pagam IRC a 5% até 2033 sobre os lucros de operações com não residentes ou com outras entidades do CINM. Exige criação de emprego e, com 1 a 5 postos de trabalho, um investimento mínimo de 75 000 € nos dois primeiros anos.",
+        "en": "Companies licensed in the International Business Centre of Madeira by 31 December 2026 pay 5% corporate tax (IRC) until 2033 on profits from operations with non-residents or other CINM entities. Job creation is required and, with 1 to 5 jobs, a minimum investment of €75,000 in the first two years.",
+        "ru": "Компании, получившие лицензию в Международном деловом центре Мадейры до 31 декабря 2026 года, платят IRC 5% до 2033 года с прибыли от операций с нерезидентами или с другими компаниями CINM. Нужно создать рабочие места, а при 1–5 местах — вложить не меньше 75 000 € за первые два года.",
+        "es": "Las empresas licenciadas en el Centro Internacional de Negocios de Madeira hasta el 31 de diciembre de 2026 tributan un IRC del 5% hasta 2033 sobre los beneficios de operaciones con no residentes o con otras entidades del CINM. Exige crear empleo y, con 1 a 5 puestos, una inversión mínima de 75 000 € en los dos primeros años.",
+        "de": "Unternehmen, die bis 31. Dezember 2026 im Internationalen Geschäftszentrum Madeira lizenziert werden, zahlen bis 2033 5 % Körperschaftsteuer (IRC) auf Gewinne aus Geschäften mit Nichtansässigen oder anderen CINM-Gesellschaften. Voraussetzung sind neue Arbeitsplätze und, bei 1 bis 5 Stellen, mindestens 75 000 € Investition in den ersten zwei Jahren."
+      }
+    },
+    {
+      "id": "isv-ev",
+      "name": "Isenção de ISV — veículos 100% elétricos",
+      "short": "ISV 0% ELÉTRICOS",
+      "level": "fiscal",
+      "audience": ["particulares", "empresas"],
+      "profiles": ["energia"],
+      "status": "open",
+      "lastStatus": "open",
+      "deadline": null,
+      "verified": "2026-09-26",
+      "source": "https://www.portaldasfinancas.gov.pt",
+      "sourceName": "Portal das Finanças",
+      "mobility": true,
+      "desc": {
+        "pt": "Os veículos 100% elétricos estão isentos de ISV. A isenção é automática no registo e não tem limite de preço.",
+        "en": "Fully electric vehicles are exempt from vehicle registration tax (ISV). The exemption is automatic at registration and has no price cap.",
+        "ru": "Полностью электрические автомобили освобождены от ISV (налога при регистрации). Льгота применяется автоматически и не зависит от цены машины.",
+        "es": "Los vehículos 100% eléctricos están exentos del ISV. La exención es automática en la matriculación y no tiene límite de precio.",
+        "de": "Reine Elektrofahrzeuge sind von der Zulassungssteuer ISV befreit. Die Befreiung gilt automatisch bei der Zulassung und ohne Preisgrenze."
+      }
+    },
+    {
+      "id": "iuc-ev",
+      "name": "Isenção de IUC — veículos 100% elétricos",
+      "short": "IUC 0% ELÉTRICOS",
+      "level": "fiscal",
+      "audience": ["particulares", "empresas"],
+      "profiles": ["energia"],
+      "status": "open",
+      "lastStatus": "open",
+      "deadline": null,
+      "verified": "2026-09-26",
+      "source": "https://www.portaldasfinancas.gov.pt",
+      "sourceName": "Portal das Finanças",
+      "mobility": true,
+      "desc": {
+        "pt": "Os veículos 100% elétricos estão isentos de IUC (Código do IUC, art. 5.º, n.º 1, al. e)). A isenção é automática e não exige pedido.",
+        "en": "Fully electric vehicles are exempt from annual circulation tax (IUC; IUC Code, art. 5(1)(e)). The exemption is automatic and needs no application.",
+        "ru": "Полностью электрические автомобили освобождены от IUC — ежегодного транспортного налога (Кодекс IUC, ст. 5, п. 1, подп. e). Льгота автоматическая, заявление не нужно.",
+        "es": "Los vehículos 100% eléctricos están exentos del IUC (Código del IUC, art. 5.º, n.º 1, letra e)). La exención es automática y no requiere solicitud.",
+        "de": "Reine Elektrofahrzeuge sind von der jährlichen Kfz-Steuer IUC befreit (IUC-Gesetz, Art. 5 Abs. 1 Buchst. e). Die Befreiung gilt automatisch, ohne Antrag."
+      }
+    },
+    {
+      "id": "isv-phev",
+      "name": "Redução de 75% do ISV — híbridos plug-in",
+      "short": "ISV -75% PLUG-IN",
+      "level": "fiscal",
+      "audience": ["particulares", "empresas"],
+      "profiles": ["energia"],
+      "status": "open",
+      "lastStatus": "open",
+      "deadline": null,
+      "verified": "2026-09-26",
+      "source": "https://www.portaldasfinancas.gov.pt",
+      "sourceName": "Portal das Finanças",
+      "mobility": true,
+      "desc": {
+        "pt": "Os híbridos plug-in com autonomia elétrica de pelo menos 50 km e emissões inferiores a 80 g/km pagam apenas 25% do ISV.",
+        "en": "Plug-in hybrids with at least 50 km of electric range and emissions below 80 g/km pay only 25% of the ISV.",
+        "ru": "Подключаемые гибриды с запасом хода на электричестве не меньше 50 км и выбросами меньше 80 г/км платят только 25% ISV.",
+        "es": "Los híbridos enchufables con al menos 50 km de autonomía eléctrica y emisiones inferiores a 80 g/km pagan solo el 25% del ISV.",
+        "de": "Plug-in-Hybride mit mindestens 50 km elektrischer Reichweite und weniger als 80 g/km Emissionen zahlen nur 25 % der ISV."
+      }
+    },
+    {
+      "id": "siide-2030",
+      "name": "SIIDE 2030 — Sistema de Incentivos ao Investimento e Desenvolvimento Empresarial (IDE, IP-RAM)",
+      "short": "SIIDE 2030",
+      "level": "regional",
+      "audience": ["pme", "empresas"],
+      "profiles": ["horeca", "micro", "digital"],
+      "status": "closed",
+      "lastStatus": "open",
+      "changed": "2026-09-26",
+      "deadline": null,
+      "verified": "2026-09-26",
+      "source": "https://ide.madeira.gov.pt/Content/PaginasPublicas/Servicos-IDE-apoios-2021-2027-Sistemas-Incentivos",
+      "sourceName": "IDE, IP-RAM",
+      "mobility": false,
+      "desc": {
+        "pt": "Sistema regional de incentivos ao investimento empresarial gerido pelo IDE, IP-RAM. O portal passou a indicá-lo como «Fechado» entre 22 e 26 de setembro de 2026; a data exata de fecho não foi publicada.",
+        "en": "Regional incentive scheme for business investment run by IDE, IP-RAM. The portal changed it to «Fechado» (closed) between 22 and 26 September 2026; the exact closing date was not published.",
+        "ru": "Региональная система стимулов для инвестиций предприятий, которой управляет IDE, IP-RAM. Портал сменил её статус на «Fechado» (закрыто) между 22 и 26 сентября 2026 года; точная дата закрытия не опубликована.",
+        "es": "Sistema regional de incentivos a la inversión empresarial gestionado por el IDE, IP-RAM. El portal pasó a indicarlo como «Fechado» (cerrado) entre el 22 y el 26 de septiembre de 2026; la fecha exacta de cierre no se publicó.",
+        "de": "Regionales Förderprogramm für Unternehmensinvestitionen, verwaltet von IDE, IP-RAM. Das Portal führt es seit dem Zeitraum 22.–26. September 2026 als «Fechado» (geschlossen); das genaue Schlussdatum wurde nicht veröffentlicht."
+      }
+    },
+    {
+      "id": "fa-mobilidade-verde",
+      "name": "Fundo Ambiental — Mobilidade Verde, 2.ª fase (veículos de emissões nulas)",
+      "short": "MOBILIDADE VERDE",
+      "level": "nacional",
+      "audience": ["particulares"],
+      "profiles": ["energia"],
+      "status": "closed",
+      "lastStatus": "closed",
+      "deadline": "2026-07-27",
+      "verified": "2026-09-26",
+      "source": "https://www.fundoambiental.pt/apoios-2026/mitigacao-as-alteracoes-climaticas/incentivo-pela-aquisicao-de-veiculos-de-emissoes-nulas-ano-20252026-mobilidade-verde-passageiros-2-fase.aspx",
+      "sourceName": "Fundo Ambiental",
+      "mobility": true,
+      "desc": {
+        "pt": "Incentivo à compra de veículo elétrico: 4 000 € para particulares e 5 000 € para IPSS, com abate obrigatório de um veículo com mais de 10 anos. A 2.ª fase encerrou a 27 de julho de 2026.",
+        "en": "Incentive to buy an electric car: €4,000 for individuals and €5,000 for IPSS charities, with mandatory scrapping of a vehicle over 10 years old. Phase 2 closed on 27 July 2026.",
+        "ru": "Стимул на покупку электромобиля: 4 000 € физлицу и 5 000 € некоммерческой организации IPSS, с обязательной сдачей в слом машины старше 10 лет. Вторая фаза закрылась 27 июля 2026 года.",
+        "es": "Incentivo a la compra de un coche eléctrico: 4 000 € para particulares y 5 000 € para IPSS, con achatarramiento obligatorio de un vehículo de más de 10 años. La 2.ª fase cerró el 27 de julio de 2026.",
+        "de": "Zuschuss zum Kauf eines Elektroautos: 4 000 € für Privatpersonen und 5 000 € für gemeinnützige IPSS, mit Pflicht zur Verschrottung eines Fahrzeugs über 10 Jahre. Die 2. Phase endete am 27. Juli 2026."
+      }
+    },
+    {
+      "id": "fa-carregadores",
+      "name": "Fundo Ambiental — Mobilidade Verde, tipologia 7 (postos de carregamento)",
+      "short": "POSTOS DE CARREGAMENTO",
+      "level": "nacional",
+      "audience": ["particulares"],
+      "profiles": ["energia"],
+      "status": "closed",
+      "lastStatus": "closed",
+      "deadline": "2026-07-27",
+      "verified": "2026-09-26",
+      "source": "https://www.fundoambiental.pt/apoios-2026/mitigacao-as-alteracoes-climaticas/incentivo-pela-aquisicao-de-veiculos-de-emissoes-nulas-ano-20252026-mobilidade-verde-passageiros-2-fase.aspx",
+      "sourceName": "Fundo Ambiental",
+      "mobility": true,
+      "desc": {
+        "pt": "Apoio a postos de carregamento: 80% do equipamento até 800 € e 80% da instalação até 1 000 €, com instalação por técnico certificado. Encerrado a 27 de julho de 2026.",
+        "en": "Support for home chargers: 80% of the equipment up to €800 and 80% of installation up to €1,000, installed by a certified technician. Closed on 27 July 2026.",
+        "ru": "Поддержка зарядных станций: 80% стоимости оборудования до 800 € и 80% монтажа до 1 000 €, монтаж сертифицированным техником. Закрыто 27 июля 2026 года.",
+        "es": "Apoyo a puntos de recarga: 80% del equipo hasta 800 € y 80% de la instalación hasta 1 000 €, con instalación por técnico certificado. Cerrado el 27 de julio de 2026.",
+        "de": "Förderung von Ladestationen: 80 % der Hardware bis 800 € und 80 % der Installation bis 1 000 €, Montage durch zertifizierte Fachkraft. Beendet am 27. Juli 2026."
+      }
+    }
+  ]
+}

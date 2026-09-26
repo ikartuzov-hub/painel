@@ -1,0 +1,14 @@
+{
+  "version": "2026-09-26T23:30",
+  "exported": "2026-09-26T23:30:00+01:00",
+  "sources": {
+    "programs": { "lastCheck": "2026-09-26", "feeds": ["IDR", "Madeira 2030", "IDE, IP-RAM", "Fundo Ambiental", "Portal das Finanças", "SDM"] },
+    "seminars": { "lastCheck": "2026-09-26", "feeds": ["IAPMEI", "ANI", "AD&C"] }
+  },
+  "ssm": {
+    "copay": 79,
+    "copayStudent": 59,
+    "source": "ajuda.seedwave.pt/subsidio/dinheiro/",
+    "sourceDate": "2026-09-25"
+  }
+}

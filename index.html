@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Painel de Apoios — tudo o que está aberto, num só painel</title>
+<meta name="description" content="Apoios, prazos e seminários para empresas da Madeira, verificados na fonte oficial e com a data de verificação em cada linha. Gratuito, sem conta e sem publicidade.">
+<link rel="canonical" href="https://ikartuzov-hub.github.io/painel/">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Painel">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:title" content="Painel de Apoios — tudo o que está aberto, num só painel">
+<meta property="og:description" content="Apoios, prazos e seminários para empresas da Madeira, verificados na fonte oficial e com a data de verificação em cada linha. Gratuito, sem conta e sem publicidade.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/painel/og-image.png">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/painel/">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="painel.css">
+<style>
+.hero{padding-top:28px;padding-bottom:8px}
+.kick{font:700 13px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(28px,6.4vw,46px);line-height:1.08;letter-spacing:-.015em;margin:0 0 12px;max-width:16ch}
+.lead{color:var(--muted);font-size:17px;max-width:56ch;margin:0 0 22px}
+.stage{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+.count{display:flex;align-items:baseline;gap:12px}
+.count .odo{font-size:72px;color:var(--ink)}
+.count #cntl{font-weight:700;font-size:18px;max-width:12ch;line-height:1.2}
+.stage>*{min-width:0}.stage .map{max-width:380px}
+.minib{overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.minib .fl{font-size:clamp(13px,3.4vw,17px)}
+.minib small{color:var(--muted);font-size:13px;display:block;margin:-2px 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (min-width:760px){.stage{grid-template-columns:1fr 1fr}.stage .minib{grid-column:1/-1}}
+section.blk{padding-top:30px;padding-bottom:6px}
+h2{font-size:24px;margin:0 0 12px;letter-spacing:-.01em}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.pchip{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:9px 14px;font:600 14px var(--sans);cursor:pointer;min-height:40px}
+.pchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.plist{display:flex;flex-direction:column;gap:10px}
+details.pc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+details.pc[open]{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+.pc summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;gap:6px}
+.pc summary::-webkit-details-marker{display:none}
+.pc .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pc .nm{font-weight:700;font-size:17px;line-height:1.3}
+.pc .mt{color:var(--muted);font-size:14px}
+.pc .mt b{color:var(--ink)}
+.pc .more{font-size:13px;color:var(--accent);font-weight:700}
+.pc[open] .more .o{display:none} .pc:not([open]) .more .c{display:none}
+.pc .body{padding:0 16px 16px;display:grid;gap:12px}
+.pc .body p{margin:0}
+.pc .acts{display:flex;flex-wrap:wrap;gap:8px}
+.pc .note{font-size:13px;color:var(--muted)}
+.empty{color:var(--muted)}
+.dl{display:flex;gap:14px;align-items:center;padding:12px 14px;margin-bottom:10px}
+.dl .ring{width:72px;height:72px}
+.dl b{display:block;line-height:1.3}
+.dl span{color:var(--muted);font-size:14px}
+.sem{padding:14px 16px;margin-bottom:10px;display:grid;gap:4px}
+.sem .when{font:700 13px var(--mono);color:var(--accent);text-transform:uppercase}
+.sem b{line-height:1.3}
+.sem span{color:var(--muted);font-size:14px}
+.sem a{font-weight:700;font-size:14px;color:var(--accent)}
+.dep{background:#070C16;border:1px solid #1d2638;border-radius:14px;padding:12px 14px;color:#EAF0FA;display:grid;gap:8px}
+.dep .dh{font:800 14px var(--mono);letter-spacing:.14em;color:#F2A93B}
+.dep .fl{font-size:clamp(11px,3vw,15px)}
+.ssm{padding:16px;margin:12px 0}
+.ssm p{margin:6px 0}
+.ssm small{color:var(--muted)}
+.evl{display:grid;gap:8px;margin-top:12px}
+.evl .pc summary{padding:12px 14px}
+.chg{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 16px}
+.chg b{flex-basis:100%}
+.create{margin:34px 0 0;padding:22px 18px;text-align:left}
+.create h2{margin-bottom:6px}
+.create p{color:var(--muted);margin:0 0 16px}
+.create .acts{display:flex;gap:10px;flex-wrap:wrap}
+</style>
+<script>try{var q=new URLSearchParams(location.search),t=q.get("theme")||localStorage.getItem("painel.theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+<script>window.PAINEL_PAGE="";</script>
+</head>
+<body>
+<header class="topbar" id="top"></header>
+<main id="app">
+  <section class="hero wrap">
+    <p class="kick" data-t="phone.kicker">Madeira · apoios às empresas</p>
+    <h1 data-t="phone.h1">O que está aberto para empresas na Madeira</h1>
+    <p class="lead" data-t="phone.lead"></p>
+    <div class="stage">
+      <div class="count"><span class="odo" id="odo"></span><span id="cntl"></span></div>
+      <div id="mapbox"></div>
+      <div class="minib" id="minib" aria-hidden="true"></div>
+    </div>
+  </section>
+  <section class="blk wrap" id="abertos">
+    <h2 data-t="phone.open">Abertos agora</h2>
+    <div class="chips" id="chips" role="group"></div>
+    <div class="plist" id="plist"></div>
+  </section>
+  <section class="blk wrap" id="prazos"><h2 data-t="phone.soon">Fecha em breve</h2><div id="dls"></div></section>
+  <section class="blk wrap" id="seminarios"><h2 data-t="phone.seminars">Seminários</h2><div id="sems"></div></section>
+  <section class="blk wrap" id="mobilidade"><h2 data-t="phone.mobility">Mobilidade</h2><div id="mob"></div></section>
+  <section class="blk wrap" id="mudancas"><h2 data-t="phone.changes">O que mudou</h2><div id="chgs"></div></section>
+  <section class="wrap"><div class="create card" id="create"></div></section>
+</main>
+<footer class="foot" id="foot"></footer>
+<script src="registry.js"></script>
+<script src="assets/qr.js"></script>
+<script src="painel.js"></script>
+<script>
+(function () {
+  var P = window.Painel, t = P.t, esc = P.esc, SUB = P.SUB;
+  var profile = SUB.profile;
+  function $(id) { return document.getElementById(id); }
+
+  function texts() {
+    document.querySelectorAll("[data-t]").forEach(function (n) { n.textContent = t(n.getAttribute("data-t")); });
+  }
+  function hero() {
+    var list = P.openPrograms(profile);
+    P.odometer($("odo"), list.length);
+    $("cntl").textContent = P.tp("phone.count", list.length);
+    $("mapbox").innerHTML = P.mapSVG(t("k.allRegion"));
+    P.drawMap($("mapbox"));
+    var top = P.openPrograms("todos").slice(0, 3);
+    $("minib").innerHTML = top.map(function (p) {
+      return '<div><div class="fl st-' + P.status(p) + '" data-flap="' + esc(P.flapText(p)) + '"></div><small>' + esc(p.name) + "</small></div>";
+    }).join("");
+    $("minib").querySelectorAll("[data-flap]").forEach(function (f, i) {
+      P.flap(f, f.getAttribute("data-flap"), { delay: 300 + i * 80, pad: 16 });
+    });
+  }
+  function chips() {
+    $("chips").setAttribute("aria-label", t("prof.label"));
+    $("chips").innerHTML = P.PROFILES.map(function (k) {
+      return '<button class="pchip" data-p="' + k + '" aria-pressed="' + (k === profile) + '">' + esc(t("prof." + k)) + "</button>";
+    }).join("");
+    $("chips").onclick = function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      profile = b.getAttribute("data-p"); P.store.set("painel.profile", profile);
+      chips(); list(); hero();
+    };
+  }
+  function card(p, compact) {
+    var s = P.status(p), biz = (p.audience || []).some(function (a) { return a !== "particulares"; });
+    var link = P.siteUrl(P.lang, "") + "#" + p.id;
+    return '<details class="pc" id="' + p.id + '"><summary><div class="top"><span class="chip st-' + s + '">' + esc(s === "soon" ? P.flapText(p) : t("status." + s)) +
+      '</span><span class="more"><span class="o">' + esc(t("phone.more")) + '</span><span class="c">' + esc(t("phone.less")) + "</span></span></div>" +
+      '<div class="nm">' + esc(p.name) + '</div><div class="mt">' + esc(P.levelLabel(p)) + " · " + esc(P.audLabel(p)) + " · " +
+      (p.deadline ? "<b>" + esc(t("deadline", { d: P.fmtDate(p.deadline) })) + "</b>" : esc(t("noDeadline"))) + "<br>" + esc(P.stamp(p)) + "</div></summary>" +
+      '<div class="body"><p>' + esc(P.descOf(p)) + '</p><p class="src">' + esc(t("source", { s: p.sourceName })) + ' — <a href="' + esc(p.source) +
+      '" target="_blank" rel="noopener">' + esc(t("phone.readSource")) + "</a></p>" +
+      '<div class="acts">' + (biz && s !== "closed" ? '<a class="btn" href="' + esc(P.hubLink(P.REG.bridges.checker)) + '">' + esc(t("phone.cta")) + "</a>" : "") +
+      '<button class="btn ghost" data-share="' + p.id + '">' + esc(t("phone.share")) + "</button></div>" +
+      (biz && s !== "closed" ? '<p class="note">' + esc(t("phone.ctaNote")) + "</p>" : "") + "</div></details>";
+  }
+  function list() {
+    var l = P.openPrograms(profile);
+    $("plist").innerHTML = l.length ? l.map(function (p) { return card(p); }).join("") : '<p class="empty">' + esc(t("phone.noneForProfile")) + "</p>";
+  }
+  function deadlines() {
+    var l = P.nextDeadlines("todos");
+    $("dls").innerHTML = l.length ? l.map(function (p) {
+      var d = P.daysTo(p.deadline);
+      return '<div class="dl card">' + P.ring(d, d <= 14 ? 14 : 120) + "<div><b>" + esc(p.name) + "</b><span>" + esc(t("deadline", { d: P.fmtDate(p.deadline) })) +
+        (p.deadlineTime ? ", " + esc(p.deadlineTime) : "") + " · " + esc(p.sourceName) + "</span></div></div>";
+    }).join("") : '<p class="empty">' + esc(t("k.s2none")) + "</p>";
+  }
+  function seminars() {
+    var l = P.seminarsAhead();
+    $("sems").innerHTML = l.length ? l.map(function (s) {
+      return '<div class="sem card"><div class="when">' + esc(P.seminarWhen(s)) + "</div><b>" + esc(s.name) + "</b><span>" + esc(s.org) + " · " + esc(t("fmt." + s.format)) +
+        (s.place ? " · " + esc(s.place) : "") + " · " + esc(s.lang) + '</span><a href="' + esc(s.register || s.url) + '" target="_blank" rel="noopener">' + esc(t("k.register")) + " →</a></div>";
+    }).join("") : '<p class="empty">' + esc(t("k.s3none")) + "</p>";
+  }
+  function mobility() {
+    var m = P.DATA.meta.ssm || {};
+    var ev = P.DATA.programs.filter(function (p) { return p.mobility; });
+    $("mob").innerHTML = '<div class="dep"><div class="dh">✈ ' + esc(t("mob.board")).toUpperCase() + "</div>" +
+      [["FNC → LIS", "LISBOA"], ["FNC → OPO", "PORTO"], ["FNC → PDL", "AÇORES"]].map(function (r) {
+        return '<div class="fl" data-flap="' + r[0] + " " + r[1] + '"></div>';
+      }).join("") + '<div class="fl st-soon" data-flap="' + esc(t("mob.boardStatus")) + '"></div></div>' +
+      '<div class="ssm card"><b>' + esc(t("mob.ssmTitle")) + "</b><p>" + esc(t("mob.ssmText", { c: m.copay, s: m.copayStudent })) + "</p><small>" +
+      esc(t("mob.ssmSource", { d: P.fmtDate(m.sourceDate) })) + '</small><p><a class="btn ghost" href="' + esc(P.hubLink(P.REG.bridges.ssm)) + '">' +
+      esc(t("mob.ssmSteps")) + " →</a></p></div><h2 style=\"font-size:19px;margin-top:18px\">" + esc(t("mob.ev")) + '</h2><div class="evl">' +
+      ev.map(function (p) { return card(p); }).join("") + "</div>";
+    $("mob").querySelectorAll("[data-flap]").forEach(function (f, i) { P.flap(f, f.getAttribute("data-flap"), { delay: i * 90 }); });
+  }
+  function changes() {
+    var l = P.changes();
+    $("chgs").innerHTML = l.length ? l.map(function (p) {
+      var b = P.status(p);
+      return '<div class="chg card"><b>' + esc(p.name) + '</b><span class="chip st-' + p.lastStatus + '">' + esc(t("status." + p.lastStatus)) +
+        '</span>→<span class="chip st-' + b + '">' + esc(t("status." + b)) + '</span><span class="muted" style="font-size:14px">' + esc(P.stamp(p)) + "</span></div>";
+    }).join("") : '<p class="empty">' + esc(t("k.s5none")) + "</p>";
+  }
+  function create() {
+    $("create").innerHTML = "<h2>" + esc(t("phone.createTitle")) + "</h2><p>" + esc(t("phone.createText")) + '</p><div class="acts"><a class="btn" href="' +
+      "setup.html?l=" + P.lang + '">' + esc(t("phone.create")) + '</a><a class="btn ghost" href="' + P.langPath(P.lang, "flyer.html") + '">' +
+      esc(t("phone.about")) + '</a><button class="btn ghost" id="shareApp">' + esc(t("share.btn")) + "</button></div>";
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-share]");
+    if (b) {
+      var p = P.DATA.programs.filter(function (x) { return x.id === b.getAttribute("data-share"); })[0];
+      P.share(t("share.program") + " " + p.name + ".", P.siteUrl(P.lang, "") + (P.SUB.src ? "?src=" + P.SUB.src : "") + "#" + p.id, b);
+    }
+    if (e.target.id === "shareApp") P.share(t("share.text"), P.siteUrl(P.lang, ""), e.target);
+  });
+
+  P.loadAll().then(function () {
+    if (!new URLSearchParams(location.search).get("p")) {
+      var sp = P.store.get("painel.profile"); if (P.PROFILES.indexOf(sp) >= 0) profile = sp;
+    }
+    P.topbar($("top"));
+    texts(); hero(); chips(); list(); deadlines(); seminars(); mobility(); changes(); create();
+    P.footer($("foot"));
+    if (location.hash) { var d = document.querySelector(location.hash); if (d && d.tagName === "DETAILS") { d.open = true; d.scrollIntoView(); } }
+    document.documentElement.setAttribute("data-ready", "1");
+  });
+  if ("serviceWorker" in navigator && !navigator.webdriver) navigator.serviceWorker.register("sw.js").catch(function () {});
+})();
+</script>
+</body>
+</html>

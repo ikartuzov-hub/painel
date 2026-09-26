@@ -1,0 +1,45 @@
+{
+  "_about": "Public layer of the SeedWave seminar radar (Notion «📡 Радар семинаров»). All topics, no filter. Internal fields (priority, own registration status, notes) are never exported.",
+  "snapshot": "2026-09-26",
+  "seminars": [
+    {
+      "id": "ani-horizonte-orcamentos",
+      "name": "Workshops «Elaboração de orçamentos para propostas ao Horizonte Europa»",
+      "org": "ANI — Agência Nacional de Inovação",
+      "start": "2026-09-25",
+      "end": "2026-09-29",
+      "format": "onsite_mainland",
+      "place": "Lisboa · Porto",
+      "lang": "PT",
+      "topics": ["funds"],
+      "url": "https://ani.pt/ani-promove-workshops-sobre-elaboracao-de-orcamentos-para-propostas-ao-horizonte-europa/",
+      "register": "https://forms.cloud.microsoft/e/vdinL1SaXu"
+    },
+    {
+      "id": "iapmei-marketing-direcao",
+      "name": "Webinar «Marketing com Direção: da estratégia aos resultados» — Digit@l Tuesdays by IAPMEI",
+      "org": "IAPMEI",
+      "start": "2026-09-29T14:00:00Z",
+      "end": null,
+      "format": "online",
+      "place": null,
+      "lang": "PT",
+      "topics": ["digital", "general"],
+      "url": "https://www.iapmei.pt/EVENTOS/Webinar-Marketing-com-Direcao-da-estrategia-aos.aspx",
+      "register": "https://www.iapmei.pt/EVENTOS/Webinar-Marketing-com-Direcao-da-estrategia-aos.aspx"
+    },
+    {
+      "id": "mostra-fundos-europeus-2026",
+      "name": "Mostra dos Fundos Europeus 2026",
+      "org": "AD&C · Portugal 2030",
+      "start": "2026-11-03",
+      "end": "2026-11-05",
+      "format": "onsite_mainland",
+      "place": "Centro de Congressos de Lisboa",
+      "lang": "PT",
+      "topics": ["funds"],
+      "url": "https://mostradosfundoseuropeus.pt/",
+      "register": "https://mostradosfundoseuropeus.pt/"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+ "name": "Painel de Apoios",
+ "slogan": "Everything that is open, on one board",
+ "madeBy": "made by SeedWave",
+ "meta": {
+  "title": "Painel de Apoios — everything that is open, on one board",
+  "desc": "Grants, deadlines and seminars for businesses in Madeira, checked against the official source, with the check date on every line. Free, no account, no ads.",
+  "flyerTitle": "Painel de Apoios — a free screen for your office, association or hotel",
+  "flyerDesc": "A live board with the open grants, deadlines and this week's seminars for businesses in Madeira. Set up in one minute, no account, no ads."
+ },
+ "a11y": {
+  "lang": "Language",
+  "theme": "Light or dark theme"
+ },
+ "flap": {
+  "open": "OPEN",
+  "soon": "CLOSES IN {n} DAYS",
+  "today": "CLOSES TODAY",
+  "tomorrow": "CLOSES TOMORROW",
+  "new": "NEW CALL",
+  "unv": "NOT VERIFIED",
+  "closed": "CLOSED"
+ },
+ "status": {
+  "open": "Open",
+  "soon": "Closing soon",
+  "new": "New call",
+  "unv": "Could not be verified",
+  "closed": "Closed"
+ },
+ "verified": "Verified on {d}",
+ "unit": {
+  "days": "days",
+  "daysOne": "day"
+ },
+ "level": {
+  "regional": "Regional",
+  "nacional": "National",
+  "fiscal": "Tax benefit"
+ },
+ "aud": {
+  "pme": "SMEs",
+  "empresas": "Companies",
+  "particulares": "Individuals"
+ },
+ "prof": {
+  "label": "Your sector",
+  "todos": "All",
+  "horeca": "Hotels and restaurants",
+  "micro": "Micro-businesses",
+  "energia": "Energy and e-mobility",
+  "digital": "Digital and international services"
+ },
+ "deadline": "Deadline: {d}",
+ "noDeadline": "No deadline · in force",
+ "source": "Source: {s}",
+ "fmt": {
+  "online": "Online",
+  "onsite_funchal": "In person · Funchal",
+  "onsite_mainland": "In person · mainland",
+  "hybrid": "Hybrid",
+  "unknown": "To be confirmed"
+ },
+ "k": {
+  "s1": "Open now",
+  "countOne": "programme open",
+  "countMany": "programmes open",
+  "allRegion": "Whole Region · Madeira and Porto Santo",
+  "s2": "Closing soon",
+  "s2sub": "Deadlines in the next 14 days",
+  "s2none": "No deadlines in the next 14 days.",
+  "s2next": "Upcoming deadlines",
+  "s3": "Seminars this week",
+  "s3next": "Upcoming seminars",
+  "s3none": "No seminars announced at the moment.",
+  "s4": "Mobility",
+  "s5": "What changed",
+  "s5sub": "Status changes in the last 7 days",
+  "s5none": "No status changes this week.",
+  "scan": "See it on your phone",
+  "scanSub": "Same data, with links to the source",
+  "updated": "Updated at {t}",
+  "offline": "Offline · data from {t}",
+  "checkedH": "Checked {h} h ago",
+  "checkedToday": "Checked today",
+  "checkedOn": "Checked on {d}",
+  "sources": "sources",
+  "was": "before",
+  "now": "now",
+  "register": "Registration"
+ },
+ "mob": {
+  "board": "Departures",
+  "boardStatus": "SSM REFUND",
+  "ssmTitle": "Social Mobility Subsidy (SSM)",
+  "ssmText": "Madeira residents get back part of the cost of flights between the island and the mainland or the Azores. On each claim you pay a co-payment of €{c} (€{s} for students).",
+  "ssmSource": "Figures from the Damos o Caminho guide, updated {d}.",
+  "ssmSteps": "How to claim in 5 steps",
+  "ev": "Electric vehicles"
+ },
+ "phone": {
+  "kicker": "Madeira · business support",
+  "h1": "What is open for businesses in Madeira",
+  "lead": "Every line was checked against the official source and shows the date of that check. No account, no ads.",
+  "countOne": "programme open now",
+  "countMany": "programmes open now",
+  "open": "Open now",
+  "noneForProfile": "There are no open programmes for this sector right now. Try «All».",
+  "soon": "Closing soon",
+  "seminars": "Seminars",
+  "mobility": "Mobility",
+  "changes": "What changed",
+  "more": "Details",
+  "less": "Close",
+  "readSource": "Read the official source",
+  "cta": "Check if my company qualifies",
+  "ctaNote": "Opens the nAm checker on SeedWave Hub.",
+  "share": "Send to a colleague",
+  "createTitle": "Want this board in your office?",
+  "createText": "A screen at reception, an A4 sheet for the counter or a widget on your website. Set up in one minute, free.",
+  "create": "Create your board",
+  "about": "How it works"
+ },
+ "share": {
+  "btn": "Send to a friend",
+  "text": "Painel de Apoios: everything open for businesses in Madeira, on one board. Checked at the source, free.",
+  "program": "Spotted on Painel de Apoios:",
+  "copied": "Copied ✓"
+ },
+ "setup": {
+  "title": "Create your board",
+  "lead": "Four choices and you get the links. No account, no e-mail: the settings live in the link itself.",
+  "name": "Name of your office, association or hotel",
+  "namePh": "e.g. Silva Accounting",
+  "lang": "Board language",
+  "profile": "Your audience's sector",
+  "color": "Accent colour",
+  "colorDefault": "Cobalt (default)",
+  "go": "Get the links",
+  "kiosk": "Screen (kiosk mode)",
+  "kioskNote": "Open on a TV or monitor in full screen. It changes screen every 25 seconds and keeps working offline with the latest data.",
+  "print": "Weekly A4 sheet",
+  "printNote": "Open it and print from the browser.",
+  "embed": "Widget for your website",
+  "embedNote": "Paste this code into your page.",
+  "copy": "Copy",
+  "open": "Open",
+  "qr": "QR for phones",
+  "qrDownload": "Download QR (PNG)",
+  "note": "Your name appears in the corner of the board and tags outgoing links, so you know visitors came through you. No trackers, no third-party analytics.",
+  "needName": "Please type a name for the board."
+ },
+ "print": {
+  "week": "Week of {d}",
+  "programs": "Open programmes",
+  "deadlines": "Upcoming deadlines",
+  "seminars": "Seminars",
+  "scan": "Point your camera to see it on your phone",
+  "printBtn": "Print",
+  "col": {
+   "program": "Programme",
+   "status": "Status",
+   "deadline": "Deadline",
+   "source": "Source"
+  }
+ },
+ "embed": {
+  "more": "See the full board"
+ },
+ "flyer": {
+  "kicker": "Free · no account · no ads",
+  "h1": "A live board with everything open for businesses in Madeira",
+  "lead": "Grants, deadlines and this week's seminars, checked against the official source. For your reception screen, your counter or your website.",
+  "whoTitle": "Who it is for",
+  "who": [
+   [
+    "Accounting firms",
+    "Clients see in the waiting room what has opened and what is about to close — and they ask."
+   ],
+   [
+    "Business associations",
+    "A screen and a weekly sheet for members, with no writing work."
+   ],
+   [
+    "Hotels and restaurants",
+    "Owners hear in time about support for energy efficiency and hiring."
+   ]
+  ],
+  "howTitle": "How it works",
+  "how": [
+   [
+    "Type the name",
+    "Pick language, sector and colour. No account, no e-mail."
+   ],
+   [
+    "Get three links",
+    "Kiosk screen, weekly A4 sheet and a website widget."
+   ],
+   [
+    "It updates itself",
+    "Offline, it shows the latest data and says how old it is."
+   ]
+  ],
+  "trustTitle": "Why you can trust it",
+  "trust": [
+   "We only publish what has an official call, law or portal behind it.",
+   "Every line has the check date and a link to the original Portuguese text.",
+   "If we could not check it, we say so — we never write «closed» on a guess.",
+   "Information summary, not consultancy."
+  ],
+  "cta": "Create your board",
+  "see": "See the board"
+ },
+ "disclaimer": "Information summary, not consultancy. The conditions that apply are those in the official text of each call."
+}

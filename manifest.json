@@ -1,0 +1,12 @@
+{
+  "id": "painel",
+  "name": "Painel de Apoios",
+  "defaultLang": "pt",
+  "langs": ["pt", "en", "ru", "es", "de"],
+  "site": "https://ikartuzov-hub.github.io/painel/",
+  "hub": "https://seedwave.pt/hub/",
+  "hubProject": "https://seedwave.pt/hub/project.html",
+  "bridges": { "checker": "nam", "ssm": "ndm" },
+  "linkedin": "https://www.linkedin.com/in/igor-kartuzov/",
+  "author": { "pt": "Igor Kartuzov", "ru": "Игорь Картузов" }
+}

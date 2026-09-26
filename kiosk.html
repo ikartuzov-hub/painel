@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Painel de Apoios — ecrã</title>
+<meta name="description" content="Painel de Apoios em modo quiosque: apoios abertos, prazos e seminários para empresas da Madeira.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Painel">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:title" content="Painel de Apoios — tudo o que está aberto, num só painel">
+<meta property="og:description" content="Apoios, prazos e seminários para empresas da Madeira, verificados na fonte oficial.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/painel/og-image.png">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/painel/kiosk.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="painel.css">
+<style>
+html,body{height:100%;overflow:hidden}
+body.kiosk{font-size:calc(min(100vh / 52, 100vw / 88));line-height:1.35;display:grid;grid-template-rows:auto auto 1fr auto;cursor:none}
+.kbar{height:.28em;background:var(--line)}
+.kbar i{display:block;height:100%;width:0;background:var(--accent)}
+.kbar i.run{animation:prog var(--dur,25s) linear forwards}
+@keyframes prog{to{width:100%}}
+.khead{display:flex;justify-content:space-between;align-items:center;padding:1.1em 2em .6em}
+.who{display:flex;align-items:center;gap:.8em}
+.who .mark{width:2.4em;height:2.4em}
+.who b{display:block;font-size:1.45em;line-height:1.15}
+.who span{color:var(--muted);font-size:.95em}
+.clock{font:800 2.4em/1 var(--mono);font-variant-numeric:tabular-nums}
+.kscreen{padding:.6em 2em 1em;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.kscreen.enter{animation:scrIn .5s ease-out}
+@keyframes scrIn{from{opacity:0;transform:translateY(.6em)}to{opacity:1;transform:none}}
+.stitle{display:flex;align-items:baseline;gap:.8em;margin:0 0 .7em}
+.stitle h1{margin:0;font-size:2.3em;line-height:1.1;letter-spacing:-.01em}
+.stitle p{margin:0;color:var(--muted);font-size:1.05em}
+.grid1{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2.1fr);gap:1.6em;min-height:0;flex:1}
+.hero{display:flex;flex-direction:column;justify-content:center;gap:.4em}
+.hero .odo{font-size:6.5em;color:var(--ink)}
+.hero .cnt{font-size:1.3em;font-weight:700;margin-top:-.2em}
+.hero .reg{color:var(--muted);font-size:.95em;margin-top:.6em}
+.board{display:flex;flex-direction:column;gap:.65em;min-height:0;overflow:hidden}
+.row{display:grid;grid-template-columns:15.5em 1fr;gap:.25em 1.1em;align-items:center;padding:.75em 1em;border-radius:.8em;
+  background:var(--surface);border:1px solid var(--line)}
+.row .flap{font-size:1.02em;grid-row:span 2;align-self:center}
+.row .nm{font-weight:700;font-size:1.12em;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.row .mt{color:var(--muted);font-size:.92em}
+.row .mt b{color:var(--ink);font-weight:600}
+.rings{display:grid;grid-template-columns:repeat(auto-fit,minmax(18em,1fr));gap:1em}
+.rcard{display:flex;gap:1.1em;align-items:center;padding:1.1em;border-radius:.9em;background:var(--surface);border:1px solid var(--line)}
+.rcard .ring{width:6.2em;height:6.2em}
+.rcard.big{padding:1.6em 1.8em;gap:2em}.rcard.big .ring{width:11em;height:11em}.rcard.big b{font-size:1.7em}.rcard.big span{font-size:1.1em}.rcard.big .flap{font-size:1.4em;margin-top:.6em;display:flex}
+.rings.one{grid-template-columns:1fr}
+.rcard b{display:block;font-size:1.15em;line-height:1.25}
+.rcard span{color:var(--muted);font-size:.92em}
+.none{font-size:1.4em;color:var(--muted);margin:.3em 0 1em}
+.sub2{font-size:1.15em;font-weight:700;margin:.2em 0 .7em;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.sem{display:grid;grid-template-columns:7.5em 1fr 6.5em;gap:1.2em;align-items:center;padding:.9em 1em;border-radius:.9em;background:var(--surface);border:1px solid var(--line);margin-bottom:.8em}
+.sem .when{font:800 1.05em/1.25 var(--mono);color:var(--accent);text-transform:uppercase}
+.sem b{display:block;font-size:1.2em;line-height:1.25}
+.sem span{color:var(--muted);font-size:.92em}
+.sem .qr{width:6.5em;height:6.5em;border-radius:.3em}
+.mob{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.6em;flex:1;min-height:0}
+.dep{background:#070C16;border-radius:1em;padding:1em 1.2em;border:1px solid #1d2638;color:#EAF0FA}
+.dep .dh{display:flex;align-items:center;gap:.6em;font:800 1.3em var(--mono);letter-spacing:.12em;color:#F2A93B;margin-bottom:.7em}
+.dep .dh svg{width:1.3em;height:1.3em;fill:#F2A93B}
+.dep .dr{display:flex;gap:.6em;align-items:center;margin:.45em 0;font-size:1.25em;flex-wrap:wrap}
+.dep .flap{--flap:#1A2336}
+.ssm{margin-top:1em;padding:1.1em 1.2em;border-radius:1em;background:var(--surface);border:1px solid var(--line);display:flex;gap:1.2em;align-items:center}
+.ssm b{font-size:1.2em}
+.ssm p{margin:.3em 0;font-size:1em}
+.ssm small{color:var(--muted);font-size:.85em}
+.ssm .qr{width:6.5em;height:6.5em;flex:none;border-radius:.3em}
+.ev h2{margin:.1em 0 .6em;font-size:1.3em}
+.ev{overflow:hidden}.evr{padding:.6em 1em;border-radius:.8em;background:var(--surface);border:1px solid var(--line);margin-bottom:.6em}
+.evr b{display:block;font-size:1.05em;margin:.35em 0 .15em}
+.evr span{color:var(--muted);font-size:.88em}
+.chg{display:grid;grid-template-columns:1fr auto auto auto;gap:1em;align-items:center;padding:1em;border-radius:.9em;background:var(--surface);border:1px solid var(--line);margin-bottom:.8em}
+.chg b{font-size:1.2em}
+.chg .arrow{color:var(--muted);font-size:1.4em}
+.chg .chip{font-size:.8em}
+.kfoot{display:grid;grid-template-columns:auto 1fr auto;gap:1.4em;align-items:center;padding:.8em 2em 1.1em;border-top:1px solid var(--line)}
+.scan{display:flex;gap:.8em;align-items:center}
+.scan .qr{width:5.2em;height:5.2em;border-radius:.3em}
+.scan b{display:block;font-size:1.05em}
+.scan span{color:var(--muted);font-size:.85em}
+.tick{overflow:hidden;white-space:nowrap;color:var(--muted);font-size:.95em;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.tick span{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+.state{text-align:right;font-size:.85em;color:var(--muted);max-width:22em}
+.state .off{color:var(--st-soon);font-weight:700}
+.state .made{display:block;margin-top:.2em}
+.kdisc{grid-column:1/-1;color:var(--muted);font-size:.72em;margin:-.3em 0 0;text-align:center}
+@media (prefers-reduced-motion: reduce){.tick span{padding-left:0}}
+@media (max-aspect-ratio:1/1){body.kiosk{font-size:calc(100vw / 46)}.grid1,.mob{grid-template-columns:1fr}.hero{flex-direction:row;align-items:center;flex-wrap:wrap}.hero .map{max-width:40%}}
+</style>
+<script>try{var t=new URLSearchParams(location.search).get("theme")||localStorage.getItem("painel.theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+</head>
+<body class="kiosk">
+<div class="kbar"><i id="prog"></i></div>
+<header class="khead">
+  <div class="who" id="who"></div>
+  <div class="clock" id="clock" aria-live="off"></div>
+</header>
+<main class="kscreen" id="screen" aria-live="polite"></main>
+<footer class="kfoot">
+  <div class="scan" id="scan"></div>
+  <div class="tick" id="tick"></div>
+  <div class="state" id="state"></div>
+  <p class="kdisc" id="kdisc"></p>
+</footer>
+<script src="registry.js"></script>
+<script src="assets/qr.js"></script>
+<script src="painel.js"></script>
+<script>
+(function () {
+  var P = window.Painel, t = P.t, esc = P.esc, SUB = P.SUB;
+  var DUR = 25000, screens = ["open", "soon", "seminars", "mobility", "changes"], idx = 0, timer = null;
+  var pin = new URLSearchParams(location.search).get("s");
+  var el = document.getElementById("screen");
+  var PLANE = '<svg viewBox="-24 -22 48 44" aria-hidden="true"><path d="M22,0 C22,-1.6 20.8,-2.6 18.8,-3 L8.5,-2.8 C7.2,-3.4 6.4,-4 6,-4.8 L0.6,-18.2 C0,-19.3 -1.2,-19.8 -2.4,-19.5 C-3.5,-19.2 -4.1,-18.2 -4.2,-17.2 L-6.3,-5.4 C-6.6,-4.2 -7.4,-3.6 -8.4,-3.3 L-12.8,-2.7 L-16.2,-9.1 C-16.9,-9.9 -17.9,-10.1 -18.6,-9.6 C-19.3,-9.1 -19.6,-8.2 -19.7,-7.2 L-20.6,0 L-19.7,7.2 C-19.6,8.2 -19.3,9.1 -18.6,9.6 C-17.9,10.1 -16.9,9.9 -16.2,9.1 L-12.8,3.5 L-8.4,3.3 C-7.4,3.6 -6.6,4.2 -6.3,5.4 L-4.2,17.2 C-4.1,18.2 -3.5,19.2 -2.4,19.5 C-1.2,19.8 0,19.3 0.6,18.2 L6,5.2 C6.4,4.8 7.2,3.4 8.5,2.8 L18.8,2.4 C20.8,2 22,1.6 22,0 Z"/></svg>';
+
+  function head() {
+    document.getElementById("who").innerHTML = P.MARK + "<div><b>" + esc(SUB.name || t("name")) + "</b><span>" +
+      esc(new Date().toLocaleDateString(P.lang === "pt" ? "pt-PT" : P.lang, { weekday: "long", day: "numeric", month: "long" })) + "</span></div>";
+  }
+  function clock() {
+    document.getElementById("clock").textContent = new Date().toLocaleTimeString("pt-PT", { hour: "2-digit", minute: "2-digit", timeZone: "Atlantic/Madeira" });
+  }
+  function title(h, sub) { return '<div class="stitle"><h1>' + esc(h) + "</h1>" + (sub ? "<p>" + esc(sub) + "</p>" : "") + "</div>"; }
+  function meta(p) {
+    var bits = [P.levelLabel(p), P.audLabel(p)];
+    bits.push(p.deadline ? "<b>" + esc(t("deadline", { d: P.fmtDate(p.deadline) })) + "</b>" : esc(t("noDeadline")));
+    return bits.map(function (b, i) { return i < 2 ? esc(b) : b; }).join(" · ") + " · " + esc(P.stamp(p));
+  }
+  function flapsIn(root) {
+    root.querySelectorAll("[data-flap]").forEach(function (f, i) {
+      P.flap(f, f.getAttribute("data-flap"), { delay: 250 + i * 75 });
+    });
+  }
+
+  var R = {
+    open: function () {
+      var list = P.openPrograms();
+      var n = list.length;
+      el.innerHTML = '<div class="grid1"><div class="hero"><span class="odo" id="odo"></span><div class="cnt">' +
+        esc(P.tp("k.count", n)) + "</div>" + P.mapSVG(t("k.allRegion")) + '<div class="reg">' + esc(t("k.allRegion")) + "</div></div>" +
+        '<div class="board"><div class="stitle"><h1>' + esc(t("k.s1")) + "</h1></div>" +
+        list.slice(0, 5).map(function (p) {
+          var s = P.status(p);
+          return '<div class="row"><span class="st-' + s + '" data-flap="' + esc(P.flapText(p)) + '"></span><div class="nm">' + esc(p.name) +
+            '</div><div class="mt">' + meta(p) + "</div></div>";
+        }).join("") + "</div></div>";
+      P.odometer(document.getElementById("odo"), n);
+      P.drawMap(el); flapsIn(el);
+    },
+    soon: function () {
+      var soon = P.closingSoon(), later = P.nextDeadlines().filter(function (p) { return soon.indexOf(p) < 0; });
+      function card(p, big) {
+        var d = P.daysTo(p.deadline);
+        return '<div class="rcard' + (big ? " big" : "") + '">' + P.ring(d, big ? 14 : 120) + "<div><b>" + esc(p.name) + "</b><span>" +
+          esc(t("deadline", { d: P.fmtDate(p.deadline) })) + (p.deadlineTime ? ", " + esc(p.deadlineTime) : "") + " · " + esc(p.sourceName) +
+          "</span>" + (big ? '<div class="st-soon" data-flap="' + esc(P.flapText(p)) + '"></div>' : "") + "</div></div>";
+      }
+      var big = soon.length <= 2;
+      el.innerHTML = title(t("k.s2"), t("k.s2sub")) +
+        (soon.length ? '<div class="rings' + (big ? " one" : "") + '">' + soon.slice(0, 6).map(function (p) { return card(p, big); }).join("") + "</div>"
+          : '<p class="none">' + esc(t("k.s2none")) + "</p>") +
+        (later.length && soon.length < 4 ? '<div class="sub2" style="margin-top:1.2em">' + esc(t("k.s2next")) + '</div><div class="rings">' +
+          later.slice(0, 3).map(function (p) { return card(p, false); }).join("") + "</div>" : "");
+      flapsIn(el);
+    },
+    seminars: function () {
+      var list = P.seminarsAhead(7), head = t("k.s3");
+      if (!list.length) { list = P.seminarsAhead(); head = t("k.s3next"); }
+      el.innerHTML = title(head) + (list.length ? list.slice(0, 3).map(function (s) {
+        return '<div class="sem"><div class="when">' + esc(P.seminarWhen(s)) + "</div><div><b>" + esc(s.name) + "</b><span>" + esc(s.org) + " · " +
+          esc(t("fmt." + s.format)) + (s.place ? " · " + esc(s.place) : "") + " · " + esc(s.lang) + "</span></div>" + P.qrSVG(s.register || s.url) + "</div>";
+      }).join("") : '<p class="none">' + esc(t("k.s3none")) + "</p>");
+    },
+    mobility: function () {
+      var ev = P.DATA.programs.filter(function (p) { return p.mobility; });
+      var m = P.DATA.meta.ssm || {};
+      var ssmLink = P.hubLink(P.REG.bridges.ssm);
+      el.innerHTML = title(t("k.s4")) + '<div class="mob"><div><div class="dep"><div class="dh">' + PLANE + '<span data-flap="' + esc(t("mob.board")) + '"></span></div>' +
+        [["FNC", "LIS", "LISBOA"], ["FNC", "OPO", "PORTO"], ["FNC", "PDL", "PONTA DELGADA"]].map(function (r) {
+          return '<div class="dr"><span data-flap="' + r[0] + " → " + r[1] + '"></span><span data-flap="' + r[2] + '"></span><span class="st-soon" data-flap="' + esc(t("mob.boardStatus")) + '"></span></div>';
+        }).join("") + "</div>" +
+        '<div class="ssm">' + P.qrSVG(ssmLink) + "<div><b>" + esc(t("mob.ssmTitle")) + "</b><p>" + esc(t("mob.ssmText", { c: m.copay, s: m.copayStudent })) +
+        "</p><small>" + esc(t("mob.ssmSource", { d: P.fmtDate(m.sourceDate) })) + " · " + esc(t("mob.ssmSteps")) + " →</small></div></div></div>" +
+        '<div class="ev"><h2>' + esc(t("mob.ev")) + "</h2>" + ev.slice(0, 4).map(function (p) {
+          var s = P.status(p);
+          return '<div class="evr"><span class="chip st-' + s + '">' + esc(t("status." + s)) + "</span><b>" + esc(p.name) + "</b><span>" +
+            (p.deadline ? esc(t("deadline", { d: P.fmtDate(p.deadline) })) : esc(t("noDeadline"))) + " · " + esc(P.stamp(p)) + "</span></div>";
+        }).join("") + "</div></div>";
+      flapsIn(el);
+    },
+    changes: function () {
+      var list = P.changes();
+      el.innerHTML = title(t("k.s5"), t("k.s5sub")) + (list.length ? list.map(function (p) {
+        var a = p.lastStatus === "closed" ? "closed" : p.lastStatus === "open" ? "open" : p.lastStatus, b = P.status(p);
+        return '<div class="chg"><div><b>' + esc(p.name) + '</b><div class="muted">' + esc(P.stamp(p)) + " · " + esc(p.sourceName) + "</div></div>" +
+          '<span class="chip st-' + a + '">' + esc(t("status." + a)) + '</span><span class="arrow">→</span><span class="chip st-' + b + '">' + esc(t("status." + b)) + "</span></div>";
+      }).join("") : '<p class="none">' + esc(t("k.s5none")) + "</p>");
+    }
+  };
+
+  function show(i) {
+    idx = (i + screens.length) % screens.length;
+    el.classList.remove("enter"); void el.offsetWidth; el.classList.add("enter");
+    R[screens[idx]]();
+    var bar = document.getElementById("prog");
+    bar.style.setProperty("--dur", DUR / 1000 + "s");
+    bar.classList.remove("run"); void bar.offsetWidth; if (!pin) bar.classList.add("run");
+    clearTimeout(timer);
+    if (!pin) timer = setTimeout(function () { show(idx + 1); }, DUR);
+  }
+  function foot() {
+    var url = P.phoneUrl();
+    document.getElementById("scan").innerHTML = P.qrSVG(url) + "<div><b>" + esc(t("k.scan")) + "</b><span>" + esc(t("k.scanSub")) + "</span></div>";
+    var m = P.DATA.meta, src = (m.sources && m.sources.programs) || {};
+    var chk = src.lastCheck ? (P.daysTo(src.lastCheck) === 0 ? t("k.checkedToday") : t("k.checkedOn", { d: P.fmtDate(src.lastCheck) })) : "";
+    var feeds = (src.feeds || []).concat((m.sources && m.sources.seminars && m.sources.seminars.feeds) || []);
+    var line = chk + " · " + t("k.sources") + ": " + feeds.filter(function (f, i) { return feeds.indexOf(f) === i; }).join(", ") + " · " + t("slogan");
+    document.getElementById("tick").innerHTML = "<span>" + esc(line) + "    " + esc(line) + "</span>";
+    state();
+    document.getElementById("kdisc").textContent = t("disclaimer");
+  }
+  function state() {
+    var f = P.DATA.fetchedAt ? P.DATA.fetchedAt.toLocaleTimeString("pt-PT", { hour: "2-digit", minute: "2-digit" }) : "—";
+    var off = !navigator.onLine || P.DATA.offline;
+    document.getElementById("state").innerHTML = (off ? '<span class="off">' + esc(t("k.offline", { t: f })) + "</span>" : esc(t("k.updated", { t: f }))) +
+      '<span class="made">' + esc(t("madeBy")) + "</span>";
+  }
+  function refresh() {
+    P.getJSON("data/meta.json").then(function (m) {
+      if (m.version !== P.DATA.meta.version) return P.loadAll().then(function () { foot(); });
+      P.DATA.offline = false; P.DATA.fetchedAt = new Date(); state();
+    }).catch(function () { P.DATA.offline = true; state(); });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") show(idx + 1);
+    if (e.key === "ArrowLeft") show(idx - 1);
+  });
+  window.addEventListener("online", refresh);
+  window.addEventListener("offline", function () { P.DATA.offline = true; state(); });
+
+  P.loadAll().then(function () {
+    document.documentElement.lang = P.lang === "pt" ? "pt-PT" : P.lang;
+    document.title = t("name") + " — " + (SUB.name || t("k.s1"));
+    head(); clock(); foot();
+    var start = pin ? Math.max(0, screens.indexOf(pin)) : 0;
+    show(start);
+    setInterval(clock, 10000);
+    setInterval(head, 600000);
+    setInterval(refresh, 30 * 60000);
+  }).catch(function (e) {
+    el.innerHTML = '<p class="none">Sem dados. ' + esc(e && e.message) + "</p>";
+  });
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
+})();
+</script>
+</body>
+</html>
