@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<base href="../"><script>window.PAINEL_LANG="ru";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Painel de Apoios — всё, что открыто, на одном табло</title>
+<meta name="description" content="Программы поддержки, дедлайны и семинары для бизнеса Мадейры, сверенные с официальным источником, с датой сверки в каждой строке. Бесплатно, без аккаунта и рекламы.">
+<link rel="alternate" hreflang="pt-PT" href="https://ikartuzov-hub.github.io/painel/">
+<link rel="alternate" hreflang="en" href="https://ikartuzov-hub.github.io/painel/en/">
+<link rel="alternate" hreflang="ru" href="https://ikartuzov-hub.github.io/painel/ru/">
+<link rel="alternate" hreflang="es" href="https://ikartuzov-hub.github.io/painel/es/">
+<link rel="alternate" hreflang="de" href="https://ikartuzov-hub.github.io/painel/de/">
+<link rel="alternate" hreflang="x-default" href="https://ikartuzov-hub.github.io/painel/">
+<link rel="canonical" href="https://ikartuzov-hub.github.io/painel/ru/">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Painel">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:title" content="Painel de Apoios — всё, что открыто, на одном табло">
+<meta property="og:description" content="Программы поддержки, дедлайны и семинары для бизнеса Мадейры, сверенные с официальным источником, с датой сверки в каждой строке. Бесплатно, без аккаунта и рекламы.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/painel/og-image.png">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/painel/ru/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="painel.css">
+<style>
+.hero{padding-top:28px;padding-bottom:8px}
+.kick{font:700 13px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(28px,6.4vw,46px);line-height:1.08;letter-spacing:-.015em;margin:0 0 12px;max-width:16ch}
+.lead{color:var(--muted);font-size:17px;max-width:56ch;margin:0 0 22px}
+.stage{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+.count{display:flex;align-items:baseline;gap:12px}
+.count .odo{font-size:72px;color:var(--ink)}
+.count #cntl{font-weight:700;font-size:18px;max-width:12ch;line-height:1.2}
+.stage>*{min-width:0}.stage .map{max-width:380px}
+.minib{overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.minib .fl{font-size:clamp(13px,3.4vw,17px);display:flex}
+.minib small{color:var(--muted);font-size:13px;display:block;margin:-2px 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (min-width:760px){.stage{grid-template-columns:1fr 1fr}.stage .minib{grid-column:1/-1}}
+section.blk{padding-top:30px;padding-bottom:6px}
+h2{font-size:24px;margin:0 0 12px;letter-spacing:-.01em}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.pchip{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:9px 14px;font:600 14px var(--sans);cursor:pointer;min-height:40px}
+.pchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.plist{display:flex;flex-direction:column;gap:10px}
+details.pc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+details.pc[open]{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+.pc summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;gap:6px}
+.pc summary::-webkit-details-marker{display:none}
+.pc .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pc .nm{font-weight:700;font-size:17px;line-height:1.3}
+.pc .mt{color:var(--muted);font-size:14px}
+.pc .mt b{color:var(--ink)}
+.pc .more{font-size:13px;color:var(--accent);font-weight:700}
+.pc[open] .more .o{display:none} .pc:not([open]) .more .c{display:none}
+.pc .body{padding:0 16px 16px;display:grid;gap:12px}
+.pc .body p{margin:0}
+.pc .acts{display:flex;flex-wrap:wrap;gap:8px}
+.pc .note{font-size:13px;color:var(--muted)}
+.empty{color:var(--muted)}
+.dl{display:flex;gap:14px;align-items:center;padding:12px 14px;margin-bottom:10px}
+.dl .ring{width:72px;height:72px}
+.dl b{display:block;line-height:1.3}
+.dl span{color:var(--muted);font-size:14px}
+.sem{padding:14px 16px;margin-bottom:10px;display:grid;gap:4px}
+.sem .when{font:700 13px var(--mono);color:var(--accent);text-transform:uppercase}
+.sem b{line-height:1.3}
+.sem span{color:var(--muted);font-size:14px}
+.sem a{font-weight:700;font-size:14px;color:var(--accent)}
+.dep{background:#070C16;border:1px solid #1d2638;border-radius:14px;padding:12px 14px;color:#EAF0FA;display:grid;gap:8px}
+.dep .dh{font:800 14px var(--mono);letter-spacing:.14em;color:#F2A93B}
+.dep .fl{font-size:clamp(11px,3vw,15px)}
+.ssm{padding:16px;margin:12px 0}
+.ssm p{margin:6px 0}
+.ssm small{color:var(--muted)}
+.evl{display:grid;gap:8px;margin-top:12px}
+.evl .pc summary{padding:12px 14px}
+.chg{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 16px}
+.chg b{flex-basis:100%}
+.create{margin:34px 0 0;padding:22px 18px;text-align:left}
+.create h2{margin-bottom:6px}
+.create p{color:var(--muted);margin:0 0 16px}
+.create .acts{display:flex;gap:10px;flex-wrap:wrap}
+</style>
+<script>try{var q=new URLSearchParams(location.search),t=q.get("theme")||localStorage.getItem("painel.theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+<script>window.PAINEL_PAGE="";</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Painel de Apoios — всё, что открыто, на одном табло", "description": "Программы поддержки, дедлайны и семинары для бизнеса Мадейры, сверенные с официальным источником, с датой сверки в каждой строке. Бесплатно, без аккаунта и рекламы.", "url": "https://ikartuzov-hub.github.io/painel/ru/", "inLanguage": "ru", "dateModified": "2026-09-26", "isPartOf": {"@type": "WebSite", "name": "Painel de Apoios", "url": "https://ikartuzov-hub.github.io/painel/"}, "author": {"@type": "Person", "name": "Igor Kartuzov", "url": "https://www.linkedin.com/in/igor-kartuzov/"}, "publisher": {"@type": "Organization", "name": "SeedWave", "url": "https://seedwave.pt/hub/"}, "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Madeira 2030 · Aviso M2030-2026-21 — Eficiência energética e descarbonização das empresas", "url": "https://ikartuzov-hub.github.io/painel/ru/#m2030-2026-21"}, {"@type": "ListItem", "position": 2, "name": "Zona Franca da Madeira (CINM) — IRC a 5%: licenciamento até 31.12.2026", "url": "https://ikartuzov-hub.github.io/painel/ru/#cinm-irc-5"}, {"@type": "ListItem", "position": 3, "name": "Isenção de ISV — veículos 100% elétricos", "url": "https://ikartuzov-hub.github.io/painel/ru/#isv-ev"}, {"@type": "ListItem", "position": 4, "name": "Isenção de IUC — veículos 100% elétricos", "url": "https://ikartuzov-hub.github.io/painel/ru/#iuc-ev"}, {"@type": "ListItem", "position": 5, "name": "Redução de 75% do ISV — híbridos plug-in", "url": "https://ikartuzov-hub.github.io/painel/ru/#isv-phev"}]}}</script>
+</head>
+<body>
+<header class="topbar" id="top"><a class="brand" href="ru/"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M36 66 L36 16 L54 16 C66 16 72 24 72 33 C72 42 66 50 54 50 L36 50"></path><path d="M14 84 Q26 78 38 84 Q50 90 62 84 Q74 78 86 84"></path></g></svg><span class="wm">Painel de Apoios</span></a><div class="topctrl"><div class="langwrap"><button class="rnd" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Язык">RU</button><div class="menu" id="langMenu" hidden=""><button data-l="pt" class=""><b>PT</b> Português</button><button data-l="en" class=""><b>EN</b> English</button><button data-l="ru" class="on"><b>RU</b> Русский</button><button data-l="es" class=""><b>ES</b> Español</button><button data-l="de" class=""><b>DE</b> Deutsch</button></div></div><button class="rnd" id="themeBtn" aria-label="Светлая или тёмная тема">☀</button></div></header>
+<main id="app">
+  <section class="hero wrap">
+    <p class="kick" data-t="phone.kicker">Мадейра · поддержка бизнеса</p>
+    <h1 data-t="phone.h1">Что сейчас открыто для бизнеса на Мадейре</h1>
+    <p class="lead" data-t="phone.lead">Каждая строка сверена с официальным источником, и у неё стоит дата сверки. Без аккаунта и рекламы.</p>
+    <div class="stage">
+      <div class="count"><span class="odo-static" id="odo" aria-label="5">5</span><span id="cntl">программ открыто сейчас</span></div>
+      <div id="mapbox"><svg class="map lit" viewBox="30 116 114 56" role="img" aria-label="Весь регион · Мадейра и Порту-Санту"><path class="isle go" d="M39,156 C40,150 48,146 57,144 C67,143 77,143 86,145 C93,146 99,148 105,150 L116,155 C113,157 107,159 100,161 C91,163 79,165 67,164 C56,163 46,162 41,160 C38,159 37,158 38,157 Z" style="--len: 167.0;"></path><path class="isle go" d="M124,127 C128,125 133,125 136,127 C137,129 134,131 130,132 C126,132 123,130 124,127 Z" style="--len: 30.5;"></path><g class="pulse" style="--i:0"><circle cx="82" cy="158" r="1.1"></circle><circle class="pr" cx="82" cy="158" r="1.1"></circle></g><g class="pulse" style="--i:1"><circle cx="104" cy="155" r="1.1"></circle><circle class="pr" cx="104" cy="155" r="1.1"></circle></g><g class="pulse" style="--i:2"><circle cx="66" cy="147" r="1.1"></circle><circle class="pr" cx="66" cy="147" r="1.1"></circle></g><g class="pulse" style="--i:3"><circle cx="49" cy="156" r="1.1"></circle><circle class="pr" cx="49" cy="156" r="1.1"></circle></g><g class="pulse" style="--i:4"><circle cx="130" cy="128.6" r="1.1"></circle><circle class="pr" cx="130" cy="128.6" r="1.1"></circle></g></svg></div>
+      <div class="minib" id="minib" aria-hidden="true"><div><div class="fl st-soon flap" data-flap="ЗАКРОЕТСЯ ЧЕРЕЗ 14 ДНЕЙ" aria-label="ЗАКРОЕТСЯ ЧЕРЕЗ 14 ДНЕЙ">ЗАКРОЕТСЯ ЧЕРЕЗ 14 ДНЕЙ</div><small>Madeira 2030 · Aviso M2030-2026-21 — Eficiência energética e descarbonização das empresas</small></div><div><div class="fl st-open flap" data-flap="ОТКРЫТО" aria-label="ОТКРЫТО">ОТКРЫТО</div><small>Zona Franca da Madeira (CINM) — IRC a 5%: licenciamento até 31.12.2026</small></div><div><div class="fl st-open flap" data-flap="ОТКРЫТО" aria-label="ОТКРЫТО">ОТКРЫТО</div><small>Isenção de ISV — veículos 100% elétricos</small></div></div>
+    </div>
+  </section>
+  <section class="blk wrap" id="abertos">
+    <h2 data-t="phone.open">Открыто сейчас</h2>
+    <div class="chips" id="chips" role="group" aria-label="Ваша отрасль"><button class="pchip" data-p="todos" aria-pressed="true">Все</button><button class="pchip" data-p="horeca" aria-pressed="false">Отели и рестораны</button><button class="pchip" data-p="micro" aria-pressed="false">Микропредприятия</button><button class="pchip" data-p="energia" aria-pressed="false">Энергия и электромобили</button><button class="pchip" data-p="digital" aria-pressed="false">Цифровые и международные услуги</button></div>
+    <div class="plist" id="plist"><details class="pc" id="m2030-2026-21"><summary><div class="top"><span class="chip st-soon">ЗАКРОЕТСЯ ЧЕРЕЗ 14 ДНЕЙ</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Madeira 2030 · Aviso M2030-2026-21 — Eficiência energética e descarbonização das empresas</div><div class="mt">Региональная · МСП · Компании · <b>Срок: 10.10.2026</b><br>Проверено 26.09.2026</div></summary><div class="body"><p>Поддержка проектов энергоэффективности и декарбонизации МСП и крупных компаний региона с организованной бухгалтерией — до 50% инвестиций в зависимости от размера компании и типа вложений. Заявки через Balcão dos Fundos до 10 октября 2026 года, 17:00.</p><p class="src">Источник: Madeira 2030 — <a href="https://madeira.portugal2030.pt/2026/08/14/empresas-tem-ate-10-de-outubro-para-se-candidatarem-projetos-de-eficiencia-energetica-e-descarbonizacao/" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="m2030-2026-21">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details><details class="pc" id="cinm-irc-5"><summary><div class="top"><span class="chip st-open">Открыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Zona Franca da Madeira (CINM) — IRC a 5%: licenciamento até 31.12.2026</div><div class="mt">Налоговая льгота · Компании · <b>Срок: 31.12.2026</b><br>Проверено 26.09.2026</div></summary><div class="body"><p>Компании, получившие лицензию в Международном деловом центре Мадейры до 31 декабря 2026 года, платят IRC 5% до 2033 года с прибыли от операций с нерезидентами или с другими компаниями CINM. Нужно создать рабочие места, а при 1–5 местах — вложить не меньше 75 000 € за первые два года.</p><p class="src">Источник: SDM · IBC Madeira — <a href="https://www.ibc-madeira.com/pt/tax-benefits.html" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="cinm-irc-5">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details><details class="pc" id="isv-ev"><summary><div class="top"><span class="chip st-open">Открыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Isenção de ISV — veículos 100% elétricos</div><div class="mt">Налоговая льгота · Физлица · Компании · Без срока · действует<br>Проверено 26.09.2026</div></summary><div class="body"><p>Полностью электрические автомобили освобождены от ISV (налога при регистрации). Льгота применяется автоматически и не зависит от цены машины.</p><p class="src">Источник: Portal das Finanças — <a href="https://www.portaldasfinancas.gov.pt" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="isv-ev">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details><details class="pc" id="iuc-ev"><summary><div class="top"><span class="chip st-open">Открыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Isenção de IUC — veículos 100% elétricos</div><div class="mt">Налоговая льгота · Физлица · Компании · Без срока · действует<br>Проверено 26.09.2026</div></summary><div class="body"><p>Полностью электрические автомобили освобождены от IUC — ежегодного транспортного налога (Кодекс IUC, ст. 5, п. 1, подп. e). Льгота автоматическая, заявление не нужно.</p><p class="src">Источник: Portal das Finanças — <a href="https://www.portaldasfinancas.gov.pt" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="iuc-ev">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details><details class="pc" id="isv-phev"><summary><div class="top"><span class="chip st-open">Открыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Redução de 75% do ISV — híbridos plug-in</div><div class="mt">Налоговая льгота · Физлица · Компании · Без срока · действует<br>Проверено 26.09.2026</div></summary><div class="body"><p>Подключаемые гибриды с запасом хода на электричестве не меньше 50 км и выбросами меньше 80 г/км платят только 25% ISV.</p><p class="src">Источник: Portal das Finanças — <a href="https://www.portaldasfinancas.gov.pt" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="isv-phev">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details></div>
+  </section>
+  <section class="blk wrap" id="prazos"><h2 data-t="phone.soon">Скоро закроется</h2><div id="dls"><div class="dl card"><svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" class="ring-bg"></circle><circle cx="50" cy="50" r="42" class="ring-fg" style="--c:263.9;--f:253.3"></circle><text x="50" y="50" class="ring-n">14</text><text x="50" y="70" class="ring-u">дней</text></svg><div><b>Madeira 2030 · Aviso M2030-2026-21 — Eficiência energética e descarbonização das empresas</b><span>Срок: 10.10.2026, 17:00 · Madeira 2030</span></div></div><div class="dl card"><svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" class="ring-bg"></circle><circle cx="50" cy="50" r="42" class="ring-fg" style="--c:263.9;--f:211.1"></circle><text x="50" y="50" class="ring-n">96</text><text x="50" y="70" class="ring-u">дней</text></svg><div><b>Zona Franca da Madeira (CINM) — IRC a 5%: licenciamento até 31.12.2026</b><span>Срок: 31.12.2026 · SDM · IBC Madeira</span></div></div></div></section>
+  <section class="blk wrap" id="seminarios"><h2 data-t="phone.seminars">Семинары</h2><div id="sems"><div class="sem card"><div class="when">25 сент. – 29 сент.</div><b>Workshops «Elaboração de orçamentos para propostas ao Horizonte Europa»</b><span>ANI — Agência Nacional de Inovação · Очно · материк · Lisboa · Porto · PT</span><a href="https://forms.cloud.microsoft/e/vdinL1SaXu" target="_blank" rel="noopener">Регистрация →</a></div><div class="sem card"><div class="when">вт, 29 сент. · 15:00</div><b>Webinar «Marketing com Direção: da estratégia aos resultados» — Digit@l Tuesdays by IAPMEI</b><span>IAPMEI · Онлайн · PT</span><a href="https://www.iapmei.pt/EVENTOS/Webinar-Marketing-com-Direcao-da-estrategia-aos.aspx" target="_blank" rel="noopener">Регистрация →</a></div><div class="sem card"><div class="when">3 нояб. – 5 нояб.</div><b>Mostra dos Fundos Europeus 2026</b><span>AD&amp;C · Portugal 2030 · Очно · материк · Centro de Congressos de Lisboa · PT</span><a href="https://mostradosfundoseuropeus.pt/" target="_blank" rel="noopener">Регистрация →</a></div></div></section>
+  <section class="blk wrap" id="mobilidade"><h2 data-t="phone.mobility">Мобильность</h2><div id="mob"><div class="dep"><div class="dh">✈ ВЫЛЕТЫ</div><div class="fl flap" data-flap="FNC → LIS LISBOA" aria-label="FNC → LIS LISBOA">FNC → LIS LISBOA</div><div class="fl flap" data-flap="FNC → OPO PORTO" aria-label="FNC → OPO PORTO">FNC → OPO PORTO</div><div class="fl flap" data-flap="FNC → PDL AÇORES" aria-label="FNC → PDL AÇORES">FNC → PDL AÇORES</div><div class="fl st-soon flap" data-flap="ВОЗВРАТ SSM" aria-label="ВОЗВРАТ SSM">ВОЗВРАТ SSM</div></div><div class="ssm card"><b>Субсидия мобильности (SSM)</b><p>Жители Мадейры возвращают часть стоимости перелётов между островом и материком или Азорами. С каждой заявки вы платите сами 79 € (59 € для студентов).</p><small>Цифры из гайда Damos o Caminho, обновлён 25.09.2026.</small><p><a class="btn ghost" href="https://seedwave.pt/hub/project.html?id=ndm&amp;lang=ru&amp;theme=dark&amp;src=painel">Как подать за 5 шагов →</a></p></div><h2 style="font-size:19px;margin-top:18px">Электромобили</h2><div class="evl"><details class="pc" id="isv-ev"><summary><div class="top"><span class="chip st-open">Открыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Isenção de ISV — veículos 100% elétricos</div><div class="mt">Налоговая льгота · Физлица · Компании · Без срока · действует<br>Проверено 26.09.2026</div></summary><div class="body"><p>Полностью электрические автомобили освобождены от ISV (налога при регистрации). Льгота применяется автоматически и не зависит от цены машины.</p><p class="src">Источник: Portal das Finanças — <a href="https://www.portaldasfinancas.gov.pt" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="isv-ev">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details><details class="pc" id="iuc-ev"><summary><div class="top"><span class="chip st-open">Открыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Isenção de IUC — veículos 100% elétricos</div><div class="mt">Налоговая льгота · Физлица · Компании · Без срока · действует<br>Проверено 26.09.2026</div></summary><div class="body"><p>Полностью электрические автомобили освобождены от IUC — ежегодного транспортного налога (Кодекс IUC, ст. 5, п. 1, подп. e). Льгота автоматическая, заявление не нужно.</p><p class="src">Источник: Portal das Finanças — <a href="https://www.portaldasfinancas.gov.pt" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="iuc-ev">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details><details class="pc" id="isv-phev"><summary><div class="top"><span class="chip st-open">Открыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Redução de 75% do ISV — híbridos plug-in</div><div class="mt">Налоговая льгота · Физлица · Компании · Без срока · действует<br>Проверено 26.09.2026</div></summary><div class="body"><p>Подключаемые гибриды с запасом хода на электричестве не меньше 50 км и выбросами меньше 80 г/км платят только 25% ISV.</p><p class="src">Источник: Portal das Finanças — <a href="https://www.portaldasfinancas.gov.pt" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><a class="btn" href="https://seedwave.pt/hub/project.html?id=nam&amp;lang=ru&amp;theme=dark&amp;src=painel">Проверить, подходит ли моя компания</a><button class="btn ghost" data-share="isv-phev">Переслать коллеге</button></div><p class="note">Откроется чекер nAm в SeedWave Hub.</p></div></details><details class="pc" id="fa-mobilidade-verde"><summary><div class="top"><span class="chip st-closed">Закрыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Fundo Ambiental — Mobilidade Verde, 2.ª fase (veículos de emissões nulas)</div><div class="mt">Национальная · Физлица · <b>Срок: 27.07.2026</b><br>Проверено 26.09.2026</div></summary><div class="body"><p>Стимул на покупку электромобиля: 4 000 € физлицу и 5 000 € некоммерческой организации IPSS, с обязательной сдачей в слом машины старше 10 лет. Вторая фаза закрылась 27 июля 2026 года.</p><p class="src">Источник: Fundo Ambiental — <a href="https://www.fundoambiental.pt/apoios-2026/mitigacao-as-alteracoes-climaticas/incentivo-pela-aquisicao-de-veiculos-de-emissoes-nulas-ano-20252026-mobilidade-verde-passageiros-2-fase.aspx" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><button class="btn ghost" data-share="fa-mobilidade-verde">Переслать коллеге</button></div></div></details><details class="pc" id="fa-carregadores"><summary><div class="top"><span class="chip st-closed">Закрыто</span><span class="more"><span class="o">Подробнее</span><span class="c">Свернуть</span></span></div><div class="nm">Fundo Ambiental — Mobilidade Verde, tipologia 7 (postos de carregamento)</div><div class="mt">Национальная · Физлица · <b>Срок: 27.07.2026</b><br>Проверено 26.09.2026</div></summary><div class="body"><p>Поддержка зарядных станций: 80% стоимости оборудования до 800 € и 80% монтажа до 1 000 €, монтаж сертифицированным техником. Закрыто 27 июля 2026 года.</p><p class="src">Источник: Fundo Ambiental — <a href="https://www.fundoambiental.pt/apoios-2026/mitigacao-as-alteracoes-climaticas/incentivo-pela-aquisicao-de-veiculos-de-emissoes-nulas-ano-20252026-mobilidade-verde-passageiros-2-fase.aspx" target="_blank" rel="noopener">Открыть официальный источник</a></p><div class="acts"><button class="btn ghost" data-share="fa-carregadores">Переслать коллеге</button></div></div></details></div></div></section>
+  <section class="blk wrap" id="mudancas"><h2 data-t="phone.changes">Что изменилось</h2><div id="chgs"><div class="chg card"><b>SIIDE 2030 — Sistema de Incentivos ao Investimento e Desenvolvimento Empresarial (IDE, IP-RAM)</b><span class="chip st-open">Открыто</span>→<span class="chip st-closed">Закрыто</span><span class="muted" style="font-size:14px">Проверено 26.09.2026</span></div></div></section>
+  <section class="wrap"><div class="create card" id="create"><h2>Хотите такое табло у себя в офисе?</h2><p>Экран на ресепшене, лист A4 на стойку или виджет на ваш сайт. Подключается за минуту, бесплатно.</p><div class="acts"><a class="btn" href="setup.html?l=ru">Создать своё табло</a><a class="btn ghost" href="ru/flyer.html">Как это работает</a><button class="btn ghost" id="shareApp">Переслать другу</button></div></div></section>
+</main>
+<footer class="foot" id="foot"><p class="disc">Информационная сводка, не консультация. Действуют условия из официального текста каждого авизо.</p><p class="copy">© 2026 <a href="https://seedwave.pt/hub/?lang=ru&amp;theme=dark">SeedWave</a> · <a href="https://www.linkedin.com/in/igor-kartuzov/" rel="author">Igor Kartuzov</a></p></footer>
+<script src="registry.js"></script>
+<script src="assets/qr.js"></script>
+<script src="painel.js"></script>
+<script>
+(function () {
+  var P = window.Painel, t = P.t, esc = P.esc, SUB = P.SUB;
+  var profile = SUB.profile;
+  function $(id) { return document.getElementById(id); }
+
+  function texts() {
+    document.querySelectorAll("[data-t]").forEach(function (n) { n.textContent = t(n.getAttribute("data-t")); });
+  }
+  function hero() {
+    var list = P.openPrograms(profile);
+    P.odometer($("odo"), list.length);
+    $("cntl").textContent = P.tp("phone.count", list.length);
+    $("mapbox").innerHTML = P.mapSVG(t("k.allRegion"));
+    P.drawMap($("mapbox"));
+    var top = P.openPrograms("todos").slice(0, 3);
+    $("minib").innerHTML = top.map(function (p) {
+      return '<div><div class="fl st-' + P.status(p) + '" data-flap="' + esc(P.flapText(p)) + '"></div><small>' + esc(p.name) + "</small></div>";
+    }).join("");
+    $("minib").querySelectorAll("[data-flap]").forEach(function (f, i) {
+      P.flap(f, f.getAttribute("data-flap"), { delay: 300 + i * 80, pad: 16 });
+    });
+  }
+  function chips() {
+    $("chips").setAttribute("aria-label", t("prof.label"));
+    $("chips").innerHTML = P.PROFILES.map(function (k) {
+      return '<button class="pchip" data-p="' + k + '" aria-pressed="' + (k === profile) + '">' + esc(t("prof." + k)) + "</button>";
+    }).join("");
+    $("chips").onclick = function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      profile = b.getAttribute("data-p"); P.store.set("painel.profile", profile);
+      chips(); list(); hero();
+    };
+  }
+  function card(p, compact) {
+    var s = P.status(p), biz = (p.audience || []).some(function (a) { return a !== "particulares"; });
+    var link = P.siteUrl(P.lang, "") + "#" + p.id;
+    return '<details class="pc" id="' + p.id + '"><summary><div class="top"><span class="chip st-' + s + '">' + esc(s === "soon" ? P.flapText(p) : t("status." + s)) +
+      '</span><span class="more"><span class="o">' + esc(t("phone.more")) + '</span><span class="c">' + esc(t("phone.less")) + "</span></span></div>" +
+      '<div class="nm">' + esc(p.name) + '</div><div class="mt">' + esc(P.levelLabel(p)) + " · " + esc(P.audLabel(p)) + " · " +
+      (p.deadline ? "<b>" + esc(t("deadline", { d: P.fmtDate(p.deadline) })) + "</b>" : esc(t("noDeadline"))) + "<br>" + esc(P.stamp(p)) + "</div></summary>" +
+      '<div class="body"><p>' + esc(P.descOf(p)) + '</p><p class="src">' + esc(t("source", { s: p.sourceName })) + ' — <a href="' + esc(p.source) +
+      '" target="_blank" rel="noopener">' + esc(t("phone.readSource")) + "</a></p>" +
+      '<div class="acts">' + (biz && s !== "closed" ? '<a class="btn" href="' + esc(P.hubLink(P.REG.bridges.checker)) + '">' + esc(t("phone.cta")) + "</a>" : "") +
+      '<button class="btn ghost" data-share="' + p.id + '">' + esc(t("phone.share")) + "</button></div>" +
+      (biz && s !== "closed" ? '<p class="note">' + esc(t("phone.ctaNote")) + "</p>" : "") + "</div></details>";
+  }
+  function list() {
+    var l = P.openPrograms(profile);
+    $("plist").innerHTML = l.length ? l.map(function (p) { return card(p); }).join("") : '<p class="empty">' + esc(t("phone.noneForProfile")) + "</p>";
+  }
+  function deadlines() {
+    var l = P.nextDeadlines("todos");
+    $("dls").innerHTML = l.length ? l.map(function (p) {
+      var d = P.daysTo(p.deadline);
+      return '<div class="dl card">' + P.ring(d, d <= 14 ? 14 : 120) + "<div><b>" + esc(p.name) + "</b><span>" + esc(t("deadline", { d: P.fmtDate(p.deadline) })) +
+        (p.deadlineTime ? ", " + esc(p.deadlineTime) : "") + " · " + esc(p.sourceName) + "</span></div></div>";
+    }).join("") : '<p class="empty">' + esc(t("k.s2none")) + "</p>";
+  }
+  function seminars() {
+    var l = P.seminarsAhead();
+    $("sems").innerHTML = l.length ? l.map(function (s) {
+      return '<div class="sem card"><div class="when">' + esc(P.seminarWhen(s)) + "</div><b>" + esc(s.name) + "</b><span>" + esc(s.org) + " · " + esc(t("fmt." + s.format)) +
+        (s.place ? " · " + esc(s.place) : "") + " · " + esc(s.lang) + '</span><a href="' + esc(s.register || s.url) + '" target="_blank" rel="noopener">' + esc(t("k.register")) + " →</a></div>";
+    }).join("") : '<p class="empty">' + esc(t("k.s3none")) + "</p>";
+  }
+  function mobility() {
+    var m = P.DATA.meta.ssm || {};
+    var ev = P.DATA.programs.filter(function (p) { return p.mobility; });
+    $("mob").innerHTML = '<div class="dep"><div class="dh">✈ ' + esc(t("mob.board")).toUpperCase() + "</div>" +
+      [["FNC → LIS", "LISBOA"], ["FNC → OPO", "PORTO"], ["FNC → PDL", "AÇORES"]].map(function (r) {
+        return '<div class="fl" data-flap="' + r[0] + " " + r[1] + '"></div>';
+      }).join("") + '<div class="fl st-soon" data-flap="' + esc(t("mob.boardStatus")) + '"></div></div>' +
+      '<div class="ssm card"><b>' + esc(t("mob.ssmTitle")) + "</b><p>" + esc(t("mob.ssmText", { c: m.copay, s: m.copayStudent })) + "</p><small>" +
+      esc(t("mob.ssmSource", { d: P.fmtDate(m.sourceDate) })) + '</small><p><a class="btn ghost" href="' + esc(P.hubLink(P.REG.bridges.ssm)) + '">' +
+      esc(t("mob.ssmSteps")) + " →</a></p></div><h2 style=\"font-size:19px;margin-top:18px\">" + esc(t("mob.ev")) + '</h2><div class="evl">' +
+      ev.map(function (p) { return card(p); }).join("") + "</div>";
+    $("mob").querySelectorAll("[data-flap]").forEach(function (f, i) { P.flap(f, f.getAttribute("data-flap"), { delay: i * 90 }); });
+  }
+  function changes() {
+    var l = P.changes();
+    $("chgs").innerHTML = l.length ? l.map(function (p) {
+      var b = P.status(p);
+      return '<div class="chg card"><b>' + esc(p.name) + '</b><span class="chip st-' + p.lastStatus + '">' + esc(t("status." + p.lastStatus)) +
+        '</span>→<span class="chip st-' + b + '">' + esc(t("status." + b)) + '</span><span class="muted" style="font-size:14px">' + esc(P.stamp(p)) + "</span></div>";
+    }).join("") : '<p class="empty">' + esc(t("k.s5none")) + "</p>";
+  }
+  function create() {
+    $("create").innerHTML = "<h2>" + esc(t("phone.createTitle")) + "</h2><p>" + esc(t("phone.createText")) + '</p><div class="acts"><a class="btn" href="' +
+      "setup.html?l=" + P.lang + '">' + esc(t("phone.create")) + '</a><a class="btn ghost" href="' + P.langPath(P.lang, "flyer.html") + '">' +
+      esc(t("phone.about")) + '</a><button class="btn ghost" id="shareApp">' + esc(t("share.btn")) + "</button></div>";
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-share]");
+    if (b) {
+      var p = P.DATA.programs.filter(function (x) { return x.id === b.getAttribute("data-share"); })[0];
+      P.share(t("share.program") + " " + p.name + ".", P.siteUrl(P.lang, "") + (P.SUB.src ? "?src=" + P.SUB.src : "") + "#" + p.id, b);
+    }
+    if (e.target.id === "shareApp") P.share(t("share.text"), P.siteUrl(P.lang, ""), e.target);
+  });
+
+  P.loadAll().then(function () {
+    if (!new URLSearchParams(location.search).get("p")) {
+      var sp = P.store.get("painel.profile"); if (P.PROFILES.indexOf(sp) >= 0) profile = sp;
+    }
+    P.topbar($("top"));
+    texts(); hero(); chips(); list(); deadlines(); seminars(); mobility(); changes(); create();
+    P.footer($("foot"));
+    if (location.hash) { var d = document.querySelector(location.hash); if (d && d.tagName === "DETAILS") { d.open = true; d.scrollIntoView(); } }
+    document.documentElement.setAttribute("data-ready", "1");
+  });
+  if ("serviceWorker" in navigator && !navigator.webdriver) navigator.serviceWorker.register("sw.js").catch(function () {});
+})();
+</script>
+
+
+</body></html>

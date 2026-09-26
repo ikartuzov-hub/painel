@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ikartuzov-hub.github.io/painel/sitemap.xml

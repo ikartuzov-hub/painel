@@ -225,13 +225,19 @@
     if (opt.pad) while (chars.length < opt.pad) chars.push(" ");
     el.classList.add("flap");
     el.setAttribute("aria-label", text);
-    el.innerHTML = chars.map(function (c) {
-      return '<span class="fc' + (c === " " ? " sp" : "") + '" aria-hidden="true"><span class="fch">' +
+    /* cells are grouped by word so a line never breaks inside a word */
+    var html = '<span class="fw">';
+    chars.forEach(function (c, i) {
+      var sp = c === " ";
+      if (sp && i > 0 && chars[i - 1] !== " ") html += "</span>";
+      html += '<span class="fc' + (sp ? " sp" : "") + '" aria-hidden="true"><span class="fch">' +
         (REDUCED || opt.instant ? esc(c) : "&nbsp;") + "</span></span>";
-    }).join("");
+      if (sp && i < chars.length - 1 && chars[i + 1] !== " ") html += '<span class="fw">';
+    });
+    el.innerHTML = html + "</span>";
     if (REDUCED || opt.instant) return;
     var start = performance.now() + (opt.delay || 0);
-    Array.prototype.forEach.call(el.children, function (cell, i) {
+    Array.prototype.forEach.call(el.querySelectorAll(".fc"), function (cell, i) {
       var c = chars[i];
       if (c === " ") { cell.firstChild.textContent = " "; return; }
       flapJobs.push({ cell: cell, ch: cell.firstChild, target: c, left: 3 + ((Math.random() * 6) | 0),

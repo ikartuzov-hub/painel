@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel de Apoios — folha da semana</title>
+<meta name="description" content="Folha A4 da semana: apoios abertos, prazos e seminários para empresas da Madeira.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Painel">
+<meta name="theme-color" content="#F5F7FB">
+<meta property="og:title" content="Painel de Apoios — tudo o que está aberto, num só painel">
+<meta property="og:description" content="Folha A4 da semana com os apoios abertos, prazos e seminários para empresas da Madeira.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/painel/og-image.png">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/painel/print.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="painel.css">
+<style>
+:root{--bg:#E9EDF4;--ink:#0E1726;--muted:#52607A;--line:#D9E0EC;--surface:#fff;--accent:#1F4FD1;color-scheme:light}
+body{padding:20px 12px 40px}
+.bar{max-width:210mm;margin:0 auto 14px;display:flex;justify-content:flex-end;gap:10px}
+.sheet{background:#fff;color:#0E1726;width:210mm;min-height:297mm;margin:0 auto;padding:14mm 14mm 12mm;box-shadow:0 10px 40px rgba(14,23,38,.15);
+  display:flex;flex-direction:column;font-size:10.5pt;line-height:1.4}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--accent);padding-bottom:5mm;margin-bottom:5mm}
+.hd .l{display:flex;gap:4mm;align-items:center}
+.hd .mark{width:14mm;height:14mm}
+.hd h1{margin:0;font-size:20pt;line-height:1.1}
+.hd .sub{color:#52607A;font-size:10pt}
+.hd .wk{text-align:right;font:700 10pt var(--mono);color:var(--accent);text-transform:uppercase}
+h2{font-size:12.5pt;margin:5mm 0 2.5mm;color:var(--accent)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:8.5pt;color:#52607A;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #D9E0EC;padding:1.5mm 2mm}
+td{border-bottom:1px solid #EDF1F7;padding:2.2mm 2mm;vertical-align:top}
+td b{display:block}
+td small{color:#52607A}
+.chip{font-size:7.5pt;padding:1mm 2mm;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.sems div{padding:2mm 0;border-bottom:1px solid #EDF1F7}
+.sems .when{font:700 9pt var(--mono);color:var(--accent)}
+.ft{margin-top:auto;padding-top:6mm;display:flex;gap:6mm;align-items:center;border-top:1px solid #D9E0EC}
+.ft .qr{width:28mm;height:28mm;flex:none}
+.ft p{margin:0 0 1.5mm}
+.ft .disc{color:#52607A;font-size:8.5pt}
+.ft .made{font-size:8.5pt;color:#52607A}
+@page{size:A4;margin:0}
+@media print{body{padding:0;background:#fff}.bar{display:none}.sheet{box-shadow:none;margin:0;width:auto;min-height:100vh}}
+@media (max-width:820px){.sheet{width:auto;min-height:0;padding:18px}}
+</style>
+</head>
+<body>
+<div class="bar"><button class="btn" id="pr">Imprimir</button></div>
+<article class="sheet" id="sheet"></article>
+<script src="registry.js"></script>
+<script src="assets/qr.js"></script>
+<script src="painel.js"></script>
+<script>
+(function () {
+  var P = window.Painel, t = P.t, esc = P.esc;
+  P.loadAll().then(function () {
+    document.documentElement.lang = P.lang === "pt" ? "pt-PT" : P.lang;
+    var monday = new Date(); monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
+    var mon = monday.toISOString().slice(0, 10);
+    var open = P.openPrograms(), dls = P.nextDeadlines("todos"), sems = P.seminarsAhead(21);
+    document.getElementById("pr").textContent = t("print.printBtn");
+    document.getElementById("pr").onclick = function () { window.print(); };
+    document.title = t("name") + " — " + t("print.week", { d: P.fmtDate(mon) });
+    document.getElementById("sheet").innerHTML =
+      '<header class="hd"><div class="l">' + P.MARK + "<div><h1>" + esc(P.SUB.name || t("name")) + '</h1><div class="sub">' +
+      esc(P.SUB.name ? t("name") + " · " + t("slogan") : t("slogan")) + '</div></div></div><div class="wk">' + esc(t("print.week", { d: P.fmtDate(mon) })) + "</div></header>" +
+      "<h2>" + esc(t("print.programs")) + " · " + open.length + "</h2><table><thead><tr><th>" + esc(t("print.col.program")) + "</th><th>" +
+      esc(t("print.col.status")) + "</th><th>" + esc(t("print.col.deadline")) + "</th><th>" + esc(t("print.col.source")) + "</th></tr></thead><tbody>" +
+      open.map(function (p) {
+        var s = P.status(p);
+        return "<tr><td><b>" + esc(p.name) + "</b><small>" + esc(P.levelLabel(p)) + " · " + esc(P.audLabel(p)) + '</small></td><td><span class="chip st-' + s + '">' +
+          esc(s === "soon" ? P.flapText(p) : t("status." + s)) + "</span></td><td>" + (p.deadline ? esc(P.fmtDate(p.deadline)) : "—") + "</td><td>" + esc(p.sourceName) +
+          "<br><small>" + esc(P.stamp(p)) + "</small></td></tr>";
+      }).join("") + "</tbody></table>" +
+      (dls.length ? "<h2>" + esc(t("print.deadlines")) + "</h2><table><tbody>" + dls.map(function (p) {
+        var d = P.daysTo(p.deadline);
+        return "<tr><td style=\"width:22mm\"><b>" + esc(P.fmtDate(p.deadline)) + "</b><small>" + d + " " + esc(P.tp("unit.days", d)) + "</small></td><td>" + esc(p.name) + "</td></tr>";
+      }).join("") + "</tbody></table>" : "") +
+      "<h2>" + esc(t("print.seminars")) + '</h2><div class="sems">' + (sems.length ? sems.map(function (s) {
+        return '<div><span class="when">' + esc(P.seminarWhen(s)) + "</span> — <b>" + esc(s.name) + "</b><br><small>" + esc(s.org) + " · " + esc(t("fmt." + s.format)) +
+          (s.place ? " · " + esc(s.place) : "") + "</small></div>";
+      }).join("") : "<div>" + esc(t("k.s3none")) + "</div>") + "</div>" +
+      '<footer class="ft">' + P.qrSVG(P.phoneUrl()) + "<div><p><b>" + esc(t("print.scan")) + "</b><br><small>" + esc(P.phoneUrl().replace(/^https:\/\//, "")) +
+      '</small></p><p class="disc">' + esc(t("disclaimer")) + '</p><p class="made">' + esc(t("k.checkedOn", { d: P.fmtDate(P.DATA.meta.sources.programs.lastCheck) })) +
+      " · © " + new Date().getFullYear() + " SeedWave · Igor Kartuzov</p></div></footer>";
+  });
+})();
+</script>
+</body>
+</html>

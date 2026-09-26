@@ -1,5 +1,5 @@
 {
-  "_about": "Publicly visible layer of the SeedWave subsidy sensor (Notion «Мониторинг субсидий Мадейры»). Only confidence level 1 (aviso, law, official portal). Announcements without an aviso (contour B, status 'ждём открытия') are never exported. The internal 'Условия' field is never exported; 'desc' is a short public summary written only from the official source.",
+  "_about": "Publicly visible layer of the SeedWave subsidy sensor (Notion «Мониторинг субсидий Мадейры»). Only confidence level 1 (aviso, law, official portal). Announcements without an aviso (contour B: 'awaiting opening') are never exported. The internal 'Условия' field is never exported; 'desc' is a short public summary written only from the official source.",
   "snapshot": "2026-09-26",
   "programs": [
     {

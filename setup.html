@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Criar o seu painel — Painel de Apoios</title>
+<meta name="description" content="Crie o seu Painel de Apoios em um minuto: ecrã em modo quiosque, folha A4 da semana e widget para o seu site. Grátis, sem conta.">
+<link rel="canonical" href="https://ikartuzov-hub.github.io/painel/setup.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Painel">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:title" content="Criar o seu painel — Painel de Apoios">
+<meta property="og:description" content="Ecrã em modo quiosque, folha A4 da semana e widget para o seu site. Grátis, sem conta, sem publicidade.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/painel/og-image.png">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/painel/setup.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="painel.css">
+<style>
+main{max-width:720px}
+h1{font-size:clamp(28px,6vw,40px);margin:28px 0 8px;letter-spacing:-.015em}
+.lead{color:var(--muted);margin:0 0 22px}
+form{display:grid;gap:18px;padding:20px}
+label.f{display:grid;gap:8px;font-weight:700}
+input[type=text]{font:16px var(--sans);padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+input[type=text]:focus{outline:3px solid color-mix(in srgb,var(--accent) 40%,transparent);border-color:var(--accent)}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+legend{font-weight:700;margin-bottom:8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0}
+.opts span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:var(--bg);cursor:pointer;font-weight:600;font-size:14px;min-height:40px}
+.opts input:checked+span{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,transparent)}
+.opts input:focus-visible+span{outline:3px solid var(--accent)}
+.sw{width:18px;height:18px;border-radius:50%;display:inline-block;border:1px solid rgba(255,255,255,.25)}
+.err{color:var(--st-soon);font-weight:700;margin:0}
+.out{display:grid;gap:14px;margin:22px 0}
+.lk{padding:16px;display:grid;gap:8px}
+.lk b{font-size:17px}
+.lk p{margin:0;color:var(--muted);font-size:14px}
+.lk code,.lk textarea{font:13px/1.45 var(--mono);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;color:var(--ink);word-break:break-all;width:100%;resize:vertical}
+.lk .acts{display:flex;gap:8px;flex-wrap:wrap}
+.lk .btn{min-height:40px;padding:8px 16px;font-size:14px}
+.qrw{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.qrw .qr{width:150px;height:150px;border-radius:8px}
+.note{color:var(--muted);font-size:14px}
+</style>
+<script>try{var t=new URLSearchParams(location.search).get("theme")||localStorage.getItem("painel.theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+</head>
+<body>
+<header class="topbar" id="top"></header>
+<main class="wrap">
+  <h1 id="h1">Criar o seu painel</h1>
+  <p class="lead" id="lead"></p>
+  <form class="card" id="f" novalidate></form>
+  <div class="out" id="out" hidden></div>
+  <p class="note" id="note"></p>
+</main>
+<footer class="foot" id="foot"></footer>
+<script src="registry.js"></script>
+<script src="assets/qr.js"></script>
+<script src="painel.js"></script>
+<script>
+(function () {
+  var P = window.Painel, t = P.t, esc = P.esc;
+  var COLORS = [["", "#1F4FD1"], ["0E8FA8", "#0E8FA8"], ["2FBF71", "#2FBF71"], ["C13A57", "#C13A57"], ["F2A93B", "#F2A93B"]];
+  function $(id) { return document.getElementById(id); }
+  function radios(name, items, cur) {
+    return '<div class="opts">' + items.map(function (it) {
+      return '<label><input type="radio" name="' + name + '" value="' + it[0] + '"' + (it[0] === cur ? " checked" : "") + "><span>" + it[1] + "</span></label>";
+    }).join("") + "</div>";
+  }
+  function build() {
+    $("h1").textContent = t("setup.title"); $("lead").textContent = t("setup.lead"); $("note").textContent = t("setup.note");
+    document.title = t("setup.title") + " — " + t("name");
+    $("f").innerHTML =
+      '<label class="f">' + esc(t("setup.name")) + '<input type="text" name="n" maxlength="60" autocomplete="organization" placeholder="' + esc(t("setup.namePh")) + '"></label>' +
+      "<fieldset><legend>" + esc(t("setup.lang")) + "</legend>" + radios("l", P.LANGS.map(function (l) { return [l, l.toUpperCase() + " · " + P.LNAME[l]]; }), P.lang) + "</fieldset>" +
+      "<fieldset><legend>" + esc(t("setup.profile")) + "</legend>" + radios("p", P.PROFILES.map(function (k) { return [k, esc(t("prof." + k))]; }), "todos") + "</fieldset>" +
+      "<fieldset><legend>" + esc(t("setup.color")) + "</legend>" + radios("c", COLORS.map(function (c, i) {
+        return [c[0], '<i class="sw" style="background:' + c[1] + '"></i>' + (i === 0 ? esc(t("setup.colorDefault")) : c[1])];
+      }), "") + "</fieldset>" +
+      '<p class="err" id="err" hidden></p><div><button class="btn" type="submit">' + esc(t("setup.go")) + "</button></div>";
+    $("f").onsubmit = go;
+  }
+  function go(e) {
+    e.preventDefault();
+    var fd = new FormData($("f")), n = (fd.get("n") || "").trim();
+    if (!n) { $("err").hidden = false; $("err").textContent = t("setup.needName"); $("f").n.focus(); return; }
+    $("err").hidden = true;
+    var q = "n=" + encodeURIComponent(n) + "&l=" + fd.get("l") + "&p=" + fd.get("p") + (fd.get("c") ? "&c=" + fd.get("c") : "") + "&src=" + P.slug(n);
+    var site = P.REG.site, kiosk = site + "kiosk.html?" + q, print = site + "print.html?" + q, embed = site + "embed.html?" + q;
+    var phone = site + P.langPath(fd.get("l"), "") + "?src=" + P.slug(n) + (fd.get("p") !== "todos" ? "&p=" + fd.get("p") : "");
+    var code = '<iframe src="' + embed + '" title="Painel de Apoios" loading="lazy" style="width:100%;max-width:760px;height:560px;border:0"></iframe>';
+    function block(title, note, val, isCode) {
+      return '<div class="lk card"><b>' + esc(title) + "</b><p>" + esc(note) + "</p>" + (isCode ? '<textarea rows="3" readonly>' + esc(val) + "</textarea>" : "<code>" + esc(val) + "</code>") +
+        '<div class="acts"><button class="btn ghost" type="button" data-copy="' + esc(val) + '">' + esc(t("setup.copy")) + "</button>" +
+        (isCode ? "" : '<a class="btn ghost" href="' + esc(val) + '" target="_blank" rel="noopener">' + esc(t("setup.open")) + "</a>") + "</div></div>";
+    }
+    $("out").hidden = false;
+    $("out").innerHTML = block(t("setup.kiosk"), t("setup.kioskNote"), kiosk) + block(t("setup.print"), t("setup.printNote"), print) +
+      block(t("setup.embed"), t("setup.embedNote"), code, true) +
+      '<div class="lk card"><b>' + esc(t("setup.qr")) + '</b><div class="qrw">' + P.qrSVG(phone) + "<div><code>" + esc(phone) +
+      '</code><div class="acts" style="margin-top:10px"><button class="btn ghost" type="button" id="qrdl">' + esc(t("setup.qrDownload")) + "</button></div></div></div></div>";
+    $("qrdl").onclick = function () { downloadQR(phone, P.slug(n)); };
+    $("out").scrollIntoView({ behavior: P.REDUCED ? "auto" : "smooth" });
+  }
+  function downloadQR(text, name) {
+    var q = window.qrcode(0, "M"); q.addData(text); q.make();
+    var n = q.getModuleCount(), s = 16, pad = 4, cv = document.createElement("canvas");
+    cv.width = cv.height = (n + pad * 2) * s;
+    var g = cv.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, cv.width, cv.height); g.fillStyle = "#0B1220";
+    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) if (q.isDark(y, x)) g.fillRect((x + pad) * s, (y + pad) * s, s, s);
+    var a = document.createElement("a"); a.download = "painel-qr-" + (name || "painel") + ".png"; a.href = cv.toDataURL("image/png"); a.click();
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copy]"); if (!b) return;
+    var v = b.getAttribute("data-copy"), old = b.textContent;
+    var done = function () { b.textContent = t("share.copied"); setTimeout(function () { b.textContent = old; }, 1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(v).then(done, done); else done();
+  });
+  P.loadAll().then(function () {
+    document.documentElement.lang = P.lang === "pt" ? "pt-PT" : P.lang;
+    P.topbar($("top"), { home: P.langPath(P.lang, ""), onLang: function (l) { var p = new URLSearchParams(location.search); p.set("l", l); location.search = p.toString(); } });
+    build(); P.footer($("foot"));
+  });
+})();
+</script>
+</body>
+</html>

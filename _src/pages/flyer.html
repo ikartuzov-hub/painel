@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Painel de Apoios — um ecrã grátis para o seu escritório, associação ou hotel</title>
+<meta name="description" content="Um painel vivo com os apoios abertos, os prazos e os seminários da semana para empresas da Madeira. Liga-se num minuto, sem conta e sem publicidade.">
+<link rel="canonical" href="https://ikartuzov-hub.github.io/painel/flyer.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Painel">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:title" content="Painel de Apoios — um ecrã grátis para o seu escritório, associação ou hotel">
+<meta property="og:description" content="Um painel vivo com os apoios abertos, os prazos e os seminários da semana para empresas da Madeira. Liga-se num minuto, sem conta e sem publicidade.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/painel/og-image.png">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/painel/flyer.html">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="painel.css">
+<style>
+.hero{padding-top:34px;padding-bottom:10px}
+.kick{font:700 13px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+h1{font-size:clamp(30px,6.6vw,52px);line-height:1.06;letter-spacing:-.02em;margin:0 0 14px;max-width:18ch}
+.lead{color:var(--muted);font-size:18px;max-width:58ch;margin:0 0 24px}
+.wow{background:#070C16;border:1px solid #1d2638;border-radius:18px;padding:18px;display:grid;gap:10px;color:#EAF0FA;max-width:640px}
+.wow .fl{font-size:clamp(14px,3.6vw,22px);display:flex}
+.wow small{display:block;margin-top:4px}
+.wow small{color:#93A3BD;font-size:13px}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+section.blk{padding-top:40px}
+h2{font-size:26px;margin:0 0 14px;letter-spacing:-.01em}
+.grid3{display:grid;gap:12px}
+@media (min-width:760px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.grid3 .card{padding:18px}
+.grid3 b{display:block;font-size:17px;margin-bottom:6px}
+.grid3 p{margin:0;color:var(--muted)}
+.num{font:800 28px var(--mono);color:var(--accent);display:block;margin-bottom:6px}
+ul.trust{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.trust li{padding:14px 16px 14px 44px;position:relative}
+ul.trust li::before{content:"✓";position:absolute;left:16px;top:13px;color:var(--st-open);font-weight:800}
+.final{margin-top:40px;padding:24px 20px}
+</style>
+<script>try{var q=new URLSearchParams(location.search),t=q.get("theme")||localStorage.getItem("painel.theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+<script>window.PAINEL_PAGE="flyer.html";</script>
+</head>
+<body>
+<header class="topbar" id="top"></header>
+<main>
+  <section class="hero wrap">
+    <p class="kick" data-t="flyer.kicker">Grátis · sem conta · sem publicidade</p>
+    <h1 data-t="flyer.h1">Um painel vivo com tudo o que está aberto para as empresas da Madeira</h1>
+    <p class="lead" data-t="flyer.lead"></p>
+    <div class="wow" id="wow" aria-hidden="true"></div>
+    <div class="acts" id="acts1"></div>
+  </section>
+  <section class="blk wrap"><h2 data-t="flyer.whoTitle">Para quem</h2><div class="grid3" id="who"></div></section>
+  <section class="blk wrap"><h2 data-t="flyer.howTitle">Como funciona</h2><div class="grid3" id="how"></div></section>
+  <section class="blk wrap"><h2 data-t="flyer.trustTitle">Porque pode confiar</h2><ul class="trust" id="trust"></ul></section>
+  <section class="wrap"><div class="card final"><h2 data-t="slogan">Tudo o que está aberto, num só painel</h2><div class="acts" id="acts2"></div></div></section>
+</main>
+<footer class="foot" id="foot"></footer>
+<script src="registry.js"></script>
+<script src="assets/qr.js"></script>
+<script src="painel.js"></script>
+<script>
+(function () {
+  var P = window.Painel, t = P.t, esc = P.esc;
+  function $(id) { return document.getElementById(id); }
+  function acts(id, share) {
+    $(id).innerHTML = '<a class="btn" href="setup.html?l=' + P.lang + '">' + esc(t("flyer.cta")) + '</a><a class="btn ghost" href="' + P.langPath(P.lang, "") + '">' +
+      esc(t("flyer.see")) + "</a>" + (share ? '<button class="btn ghost" data-sharefly>' + esc(t("share.btn")) + "</button>" : "");
+  }
+  var cycle = 0, lines = [];
+  function wow() {
+    var l = P.openPrograms("todos");
+    lines = l.slice(0, 3);
+    $("wow").innerHTML = lines.map(function (p, i) {
+      return '<div><div class="fl st-' + P.status(p) + '" id="wf' + i + '"></div><small>' + esc(p.name) + "</small></div>";
+    }).join("");
+    lines.forEach(function (p, i) { P.flap($("wf" + i), P.flapText(p), { delay: 200 + i * 90, pad: 16 }); });
+  }
+  P.loadAll().then(function () {
+    P.topbar($("top"));
+    document.querySelectorAll("[data-t]").forEach(function (n) { n.textContent = t(n.getAttribute("data-t")); });
+    wow(); acts("acts1", false); acts("acts2", true);
+    $("who").innerHTML = t("flyer.who").map(function (w) { return '<div class="card"><b>' + esc(w[0]) + "</b><p>" + esc(w[1]) + "</p></div>"; }).join("");
+    $("how").innerHTML = t("flyer.how").map(function (w, i) { return '<div class="card"><span class="num">0' + (i + 1) + "</span><b>" + esc(w[0]) + "</b><p>" + esc(w[1]) + "</p></div>"; }).join("");
+    $("trust").innerHTML = t("flyer.trust").map(function (w) { return '<li class="card">' + esc(w) + "</li>"; }).join("");
+    P.footer($("foot"));
+    if (!P.REDUCED) setInterval(function () {
+      cycle++;
+      lines.forEach(function (p, i) {
+        var txt = cycle % 2 ? (p.deadline ? t("deadline", { d: P.fmtDate(p.deadline) }) : t("noDeadline")) : P.flapText(p);
+        P.flap($("wf" + i), txt, { delay: i * 90, pad: 16 });
+      });
+    }, 6000);
+    document.documentElement.setAttribute("data-ready", "1");
+  });
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-sharefly]");
+    if (b) P.share(t("share.text"), P.siteUrl(P.lang, "flyer.html"), b);
+  });
+})();
+</script>
+</body>
+</html>

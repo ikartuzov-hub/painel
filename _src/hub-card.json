@@ -1,0 +1,16 @@
+{
+  "_note": "Карточка для seedwave-catalog/hub/projects.{lang}.json — ГОТОВО К «ДА», в Хаб не добавлено (запрет ночи). id, name, icon одинаковые во всех языках; desc/stage — по языку.",
+  "id": "painel",
+  "name": "Painel de Apoios",
+  "icon": "<svg viewBox=\"0 0 100 100\"><g fill=\"none\" stroke=\"#1F4FD1\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M36 66 L36 16 L54 16 C66 16 72 24 72 33 C72 42 66 50 54 50 L36 50\"/><path d=\"M14 84 Q26 78 38 84 Q50 90 62 84 Q74 78 86 84\"/></g></svg>",
+  "demoLink": "https://ikartuzov-hub.github.io/painel/",
+  "moreLink": "https://ikartuzov-hub.github.io/painel/flyer.html",
+  "desc": {
+    "pt": "Painel vivo com os apoios abertos, prazos e seminários para empresas da Madeira. Grátis para escritórios, associações e hotéis.",
+    "en": "Live board of open grants, deadlines and seminars for businesses in Madeira. Free for offices, associations and hotels.",
+    "ru": "Живое табло открытых программ поддержки, сроков и семинаров для бизнеса Мадейры. Бесплатно для офисов, ассоциаций и отелей.",
+    "es": "Panel en vivo con ayudas abiertas, plazos y seminarios para empresas de Madeira. Gratis para despachos, asociaciones y hoteles.",
+    "de": "Live-Tafel mit offenen Förderprogrammen, Fristen und Seminaren für Unternehmen auf Madeira. Kostenlos für Büros, Verbände und Hotels."
+  },
+  "related": ["nam", "ndm"]
+}

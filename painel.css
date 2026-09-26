@@ -40,6 +40,7 @@ a{color:inherit}
   box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 1px 0 rgba(0,0,0,.35)}
 .fc::before{content:"";position:absolute;inset:0 0 50% 0;background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,0))}
 .fc::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--flap-hinge);transform:translateY(-.5px)}
+.flap .fw{display:inline-flex;gap:.08em;white-space:nowrap}
 .fc.sp{background:color-mix(in srgb,var(--flap) 45%,transparent);box-shadow:none}
 .flap .fc{color:var(--flap-ink);font-size:1em}
 .flap .fch{display:block;transform-origin:50% 50%;backface-visibility:hidden;color:inherit!important;font-size:1em!important}

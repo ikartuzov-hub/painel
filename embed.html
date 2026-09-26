@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel de Apoios — widget</title>
+<meta name="description" content="Widget do Painel de Apoios: apoios abertos para empresas da Madeira, verificados na fonte oficial.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Painel">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:title" content="Painel de Apoios — tudo o que está aberto, num só painel">
+<meta property="og:description" content="Apoios abertos para empresas da Madeira, verificados na fonte oficial.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/painel/og-image.png">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/painel/embed.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="painel.css">
+<style>
+body{background:transparent;font-size:15px}
+.w{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:14px;max-width:760px}
+.wh{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.wh .mark{width:24px;height:24px}
+.wh b{font-size:16px}
+.wh .fl{margin-left:auto;font-size:12px}
+.it{display:grid;gap:4px;padding:10px 0;border-top:1px solid var(--line)}
+.it a.nm{font-weight:700;text-decoration:none;line-height:1.3}
+.it a.nm:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.it small{color:var(--muted)}
+.wf{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:10px;font-size:13px;color:var(--muted)}
+.wf a{color:var(--accent);font-weight:700}
+</style>
+<script>try{var t=new URLSearchParams(location.search).get("theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+</head>
+<body>
+<div class="w" id="w"></div>
+<script src="registry.js"></script>
+<script src="assets/qr.js"></script>
+<script src="painel.js"></script>
+<script>
+(function () {
+  var P = window.Painel, t = P.t, esc = P.esc;
+  function fit() { try { parent.postMessage({ painel: "height", h: document.documentElement.scrollHeight }, "*"); } catch (e) {} }
+  P.loadAll().then(function () {
+    document.documentElement.lang = P.lang === "pt" ? "pt-PT" : P.lang;
+    var l = P.openPrograms();
+    document.getElementById("w").innerHTML = '<div class="wh">' + P.MARK + "<b>" + esc(t("k.s1")) + " · " + l.length + '</b><span class="fl" id="fl"></span></div>' +
+      l.map(function (p) {
+        var s = P.status(p);
+        return '<div class="it"><div><span class="chip st-' + s + '">' + esc(s === "soon" ? P.flapText(p) : t("status." + s)) + '</span></div><a class="nm" href="' +
+          esc(P.phoneUrl() + "#" + p.id) + '" target="_blank" rel="noopener">' + esc(p.name) + "</a><small>" +
+          (p.deadline ? esc(t("deadline", { d: P.fmtDate(p.deadline) })) : esc(t("noDeadline"))) + " · " + esc(P.stamp(p)) + " · " +
+          '<a href="' + esc(p.source) + '" target="_blank" rel="noopener">' + esc(p.sourceName) + "</a></small></div>";
+      }).join("") +
+      '<div class="wf"><span>' + esc(t("disclaimer")) + '</span><a href="' + esc(P.phoneUrl()) + '" target="_blank" rel="noopener">' + esc(t("embed.more")) + " →</a></div>";
+    var top = l[0]; if (top) document.getElementById("fl").classList.add("st-" + P.status(top));
+    if (top) P.flap(document.getElementById("fl"), P.flapText(top), { delay: 200 });
+    fit(); setTimeout(fit, 1500); window.addEventListener("resize", fit);
+  });
+})();
+</script>
+</body>
+</html>
