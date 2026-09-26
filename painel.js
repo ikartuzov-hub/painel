@@ -244,6 +244,10 @@
         next: start + i * 22, done: false });
     });
     if (!flapRunning) { flapRunning = true; requestAnimationFrame(flapTick); }
+    /* safety net: a hidden/background tab pauses rAF — never leave a board blank */
+    setTimeout(function () {
+      Array.prototype.forEach.call(el.querySelectorAll(".fc"), function (cell, i) { cell.firstChild.textContent = chars[i] === " " ? " " : chars[i]; });
+    }, (opt.delay || 0) + 2500);
   }
 
   /* ---------- odometer (counts programmes, not euros) ---------- */
@@ -256,11 +260,8 @@
       return '<span class="odo-d" aria-hidden="true"><span class="odo-c">' + col + "</span></span>";
     }).join("");
     var cols = el.querySelectorAll(".odo-c");
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        digits.forEach(function (d, i) { cols[i].style.transform = "translateY(-" + (+d * 10) + "%)"; });
-      });
-    });
+    var set = function () { digits.forEach(function (d, i) { cols[i].style.transform = "translateY(-" + (+d * 10) + "%)"; }); };
+    setTimeout(set, 60);
   }
 
   /* ---------- countdown ring ---------- */
