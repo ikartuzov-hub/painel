@@ -4,18 +4,25 @@
   "programs": [
     {
       "id": "m2030-2026-21",
-      "name": "Madeira 2030 · Aviso M2030-2026-21 — Eficiência energética e descarbonização das empresas",
+      "name": "Madeira 2030 · SIEED — Eficiência Energética 2030 (Aviso M2030-2026-21): eficiência energética e descarbonização das empresas",
       "short": "EFICIÊNCIA ENERGÉTICA",
       "level": "regional",
-      "audience": ["pme", "empresas"],
-      "profiles": ["horeca", "micro", "energia"],
+      "audience": [
+        "pme",
+        "empresas"
+      ],
+      "profiles": [
+        "horeca",
+        "micro",
+        "energia"
+      ],
       "status": "open",
       "lastStatus": "open",
       "deadline": "2026-10-10",
       "deadlineTime": "17:00",
       "verified": "2026-09-26",
       "source": "https://madeira.portugal2030.pt/2026/08/14/empresas-tem-ate-10-de-outubro-para-se-candidatarem-projetos-de-eficiencia-energetica-e-descarbonizacao/",
-      "sourceName": "Madeira 2030",
+      "sourceName": "Madeira 2030 · IDE, IP-RAM",
       "mobility": false,
       "desc": {
         "pt": "Apoio a projetos de eficiência energética e descarbonização de PME e grandes empresas da Região com contabilidade organizada, até 50% do investimento consoante a dimensão da empresa e o tipo de investimento. Candidaturas no Balcão dos Fundos até 10 de outubro de 2026, às 17h00.",
@@ -30,8 +37,12 @@
       "name": "Zona Franca da Madeira (CINM) — IRC a 5%: licenciamento até 31.12.2026",
       "short": "ZONA FRANCA IRC 5%",
       "level": "fiscal",
-      "audience": ["empresas"],
-      "profiles": ["digital"],
+      "audience": [
+        "empresas"
+      ],
+      "profiles": [
+        "digital"
+      ],
       "status": "open",
       "lastStatus": "open",
       "deadline": "2026-12-31",
@@ -52,8 +63,13 @@
       "name": "Isenção de ISV — veículos 100% elétricos",
       "short": "ISV 0% ELÉTRICOS",
       "level": "fiscal",
-      "audience": ["particulares", "empresas"],
-      "profiles": ["energia"],
+      "audience": [
+        "particulares",
+        "empresas"
+      ],
+      "profiles": [
+        "energia"
+      ],
       "status": "open",
       "lastStatus": "open",
       "deadline": null,
@@ -74,8 +90,13 @@
       "name": "Isenção de IUC — veículos 100% elétricos",
       "short": "IUC 0% ELÉTRICOS",
       "level": "fiscal",
-      "audience": ["particulares", "empresas"],
-      "profiles": ["energia"],
+      "audience": [
+        "particulares",
+        "empresas"
+      ],
+      "profiles": [
+        "energia"
+      ],
       "status": "open",
       "lastStatus": "open",
       "deadline": null,
@@ -96,8 +117,13 @@
       "name": "Redução de 75% do ISV — híbridos plug-in",
       "short": "ISV -75% PLUG-IN",
       "level": "fiscal",
-      "audience": ["particulares", "empresas"],
-      "profiles": ["energia"],
+      "audience": [
+        "particulares",
+        "empresas"
+      ],
+      "profiles": [
+        "energia"
+      ],
       "status": "open",
       "lastStatus": "open",
       "deadline": null,
@@ -118,8 +144,15 @@
       "name": "SIIDE 2030 — Sistema de Incentivos ao Investimento e Desenvolvimento Empresarial (IDE, IP-RAM)",
       "short": "SIIDE 2030",
       "level": "regional",
-      "audience": ["pme", "empresas"],
-      "profiles": ["horeca", "micro", "digital"],
+      "audience": [
+        "pme",
+        "empresas"
+      ],
+      "profiles": [
+        "horeca",
+        "micro",
+        "digital"
+      ],
       "status": "closed",
       "lastStatus": "open",
       "changed": "2026-09-26",
@@ -141,8 +174,12 @@
       "name": "Fundo Ambiental — Mobilidade Verde, 2.ª fase (veículos de emissões nulas)",
       "short": "MOBILIDADE VERDE",
       "level": "nacional",
-      "audience": ["particulares"],
-      "profiles": ["energia"],
+      "audience": [
+        "particulares"
+      ],
+      "profiles": [
+        "energia"
+      ],
       "status": "closed",
       "lastStatus": "closed",
       "deadline": "2026-07-27",
@@ -163,8 +200,12 @@
       "name": "Fundo Ambiental — Mobilidade Verde, tipologia 7 (postos de carregamento)",
       "short": "POSTOS DE CARREGAMENTO",
       "level": "nacional",
-      "audience": ["particulares"],
-      "profiles": ["energia"],
+      "audience": [
+        "particulares"
+      ],
+      "profiles": [
+        "energia"
+      ],
       "status": "closed",
       "lastStatus": "closed",
       "deadline": "2026-07-27",

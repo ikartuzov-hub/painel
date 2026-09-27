@@ -2,7 +2,7 @@
 
 **Tudo o que está aberto, num só painel.** Бесплатное живое табло «что сейчас открыто для бизнеса Мадейры»: программы поддержки, дедлайны, семинары недели, мобильность. Каждая строка — с датой сверки и ссылкой на португальский первоисточник. Без аккаунта, без рекламы, без трекеров.
 
-Живое: https://ikartuzov-hub.github.io/painel/ · сделано SeedWave · автор [Igor Kartuzov](https://www.linkedin.com/in/igor-kartuzov/)
+Живое: https://painel.seedwave.pt/ · сделано SeedWave · автор [Igor Kartuzov](https://www.linkedin.com/in/igor-kartuzov/)
 
 ## Поверхности
 | Файл | Что это |

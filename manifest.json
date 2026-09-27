@@ -3,7 +3,7 @@
   "name": "Painel de Apoios",
   "defaultLang": "pt",
   "langs": ["pt", "en", "ru", "es", "de"],
-  "site": "https://ikartuzov-hub.github.io/painel/",
+  "site": "https://painel.seedwave.pt/",
   "hub": "https://seedwave.pt/hub/",
   "hubProject": "https://seedwave.pt/hub/project.html",
   "bridges": { "checker": "nam", "ssm": "ndm" },
