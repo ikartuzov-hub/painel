@@ -41,7 +41,8 @@
  "aud": {
   "pme": "PME",
   "empresas": "Empresas",
-  "particulares": "Particulares"
+  "particulares": "Particulares",
+  "desempregados": "Novos negócios de desempregados"
  },
  "prof": {
   "label": "O seu setor",

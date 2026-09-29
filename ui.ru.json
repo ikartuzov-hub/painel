@@ -44,7 +44,8 @@
  "aud": {
   "pme": "МСП",
   "empresas": "Компании",
-  "particulares": "Физлица"
+  "particulares": "Физлица",
+  "desempregados": "Своё дело для безработных"
  },
  "prof": {
   "label": "Ваша отрасль",

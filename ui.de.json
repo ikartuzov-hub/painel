@@ -41,7 +41,8 @@
  "aud": {
   "pme": "KMU",
   "empresas": "Unternehmen",
-  "particulares": "Privatpersonen"
+  "particulares": "Privatpersonen",
+  "desempregados": "Gründungen durch Arbeitslose"
  },
  "prof": {
   "label": "Ihre Branche",

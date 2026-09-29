@@ -1,6 +1,6 @@
 {
   "_about": "Publicly visible layer of the SeedWave subsidy sensor (Notion «Мониторинг субсидий Мадейры»). Only confidence level 1 (aviso, law, official portal). Announcements without an aviso (contour B: 'awaiting opening') are never exported. The internal 'Условия' field is never exported; 'desc' is a short public summary written only from the official source.",
-  "snapshot": "2026-09-26",
+  "snapshot": "2026-09-29",
   "programs": [
     {
       "id": "m2030-2026-21",
@@ -30,6 +30,33 @@
         "ru": "Поддержка проектов энергоэффективности и декарбонизации МСП и крупных компаний региона с организованной бухгалтерией — до 50% инвестиций в зависимости от размера компании и типа вложений. Заявки через Balcão dos Fundos до 10 октября 2026 года, 17:00.",
         "es": "Apoyo a proyectos de eficiencia energética y descarbonización de pymes y grandes empresas de la Región con contabilidad organizada, hasta el 50% de la inversión según el tamaño de la empresa y el tipo de inversión. Solicitudes en el Balcão dos Fundos hasta el 10 de octubre de 2026, a las 17:00.",
         "de": "Förderung von Projekten zu Energieeffizienz und Dekarbonisierung von KMU und Großunternehmen der Region mit ordnungsgemäßer Buchführung, bis zu 50 % der Investition je nach Unternehmensgröße und Art der Investition. Anträge über den Balcão dos Fundos bis 10. Oktober 2026, 17:00 Uhr."
+      }
+    },
+    {
+      "id": "iem-criee",
+      "name": "IEM · CRIEE — Programa de Criação de Empresas e Emprego: apoio a desempregados que criam o próprio negócio",
+      "short": "CRIAR EMPRESA · CRIEE",
+      "level": "regional",
+      "audience": [
+        "desempregados"
+      ],
+      "profiles": [
+        "horeca",
+        "micro"
+      ],
+      "status": "open",
+      "lastStatus": "open",
+      "deadline": null,
+      "verified": "2026-09-29",
+      "source": "https://www.iem.madeira.gov.pt/programas/criee/",
+      "sourceName": "IEM, IP-RAM",
+      "mobility": false,
+      "desc": {
+        "pt": "Subsídio não reembolsável a desempregados inscritos no IEM que criam o próprio negócio na Região, por cada posto de trabalho criado (até quatro, incluindo o promotor), com acréscimo quando o projeto tem plano de investimento. A candidatura entrega-se antes de iniciar a atividade e de fazer o investimento; é analisada por ordem de entrada.",
+        "en": "Non-repayable grant for unemployed people registered with the IEM who start their own business in the Region, per job created (up to four, including the founder), with a top-up when the project includes an investment plan. Apply before starting the activity and before investing; applications are assessed in order of arrival.",
+        "ru": "Безвозвратная субсидия безработным, стоящим на учёте в IEM, которые открывают своё дело в регионе, — за каждое созданное рабочее место (до четырёх, включая основателя), с надбавкой, если у проекта есть план инвестиций. Заявку подают до начала деятельности и до вложений; рассматривают в порядке поступления.",
+        "es": "Subvención no reembolsable para desempleados inscritos en el IEM que crean su propio negocio en la Región, por cada puesto de trabajo creado (hasta cuatro, incluido el promotor), con un complemento si el proyecto incluye un plan de inversión. La solicitud se presenta antes de iniciar la actividad y de invertir; se analiza por orden de entrada.",
+        "de": "Nicht rückzahlbarer Zuschuss für beim IEM gemeldete Arbeitslose, die in der Region ein eigenes Unternehmen gründen – je geschaffenem Arbeitsplatz (bis zu vier, einschließlich Gründer), mit Aufschlag bei einem Investitionsplan. Der Antrag wird vor Aufnahme der Tätigkeit und vor der Investition gestellt und in der Reihenfolge des Eingangs geprüft."
       }
     },
     {

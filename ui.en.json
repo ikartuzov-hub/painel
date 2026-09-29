@@ -41,7 +41,8 @@
  "aud": {
   "pme": "SMEs",
   "empresas": "Companies",
-  "particulares": "Individuals"
+  "particulares": "Individuals",
+  "desempregados": "New businesses by unemployed people"
  },
  "prof": {
   "label": "Your sector",
