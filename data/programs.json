@@ -1,7 +1,36 @@
 {
   "_about": "Publicly visible layer of the SeedWave subsidy sensor (Notion «Мониторинг субсидий Мадейры»). Only confidence level 1 (aviso, law, official portal). Announcements without an aviso (contour B: 'awaiting opening') are never exported. The internal 'Условия' field is never exported; 'desc' is a short public summary written only from the official source.",
-  "snapshot": "2026-10-10",
+  "snapshot": "2026-10-23",
   "programs": [
+    {
+      "id": "m2030-2026-35",
+      "name": "Madeira 2030 · Funcionamento 2030 – Transportes (Aviso M2030-2026-35): compensação dos custos de transporte de mercadorias",
+      "short": "TRANSPORTES · FUNCIONAMENTO",
+      "level": "regional",
+      "audience": [
+        "pme",
+        "empresas"
+      ],
+      "profiles": [
+        "micro"
+      ],
+      "status": "open",
+      "lastStatus": "closed",
+      "deadline": "2026-11-20",
+      "deadlineTime": "17:00",
+      "verified": "2026-10-23",
+      "source": "https://madeira.portugal2030.pt/2026/10/22/madeira-2030-lanca-aviso-concurso-de-57-milhoes-de-euros-para-apoiar-os-custos-de-transporte-das-empresas/",
+      "sourceName": "Madeira 2030 · IDE, IP-RAM",
+      "mobility": false,
+      "desc": {
+        "pt": "Subvenção não reembolsável que compensa os custos de transporte de mercadorias suportados em 2025 por empresas que produzem ou transformam bens na Região: o envio a partir da Madeira para o resto do país e, para matérias importadas e transformadas na Região, o transporte até à Madeira. Até 90% da despesa elegível (80% para empresas licenciadas na Zona Franca da Madeira), com despesa mínima de 7 500 € e limite de 750 000 € por candidatura. Empresas com mais de 24 meses de atividade e contabilidade organizada; uma candidatura por empresa, no Balcão dos Fundos. Não conta o transporte já apoiado pelo POSEI. Aviso-concurso: as candidaturas são avaliadas por mérito.",
+        "en": "Non-repayable grant that compensates goods transport costs incurred in 2025 by companies that produce or process goods in the Region: shipping from Madeira to the rest of the country and, for materials imported and processed in the Region, transport to Madeira. Up to 90% of eligible costs (80% for companies licensed in the Madeira Free Trade Zone), with a minimum of €7,500 in costs and a cap of €750,000 per application. Companies with more than 24 months of activity and organised accounts; one application per company, via the Balcão dos Fundos. Transport already supported by POSEI does not count. Competitive call: applications are ranked on merit.",
+        "ru": "Безвозвратная субсидия, компенсирующая расходы 2025 года на перевозку товаров компаниям, которые производят или перерабатывают товары в регионе: отправка с Мадейры в остальную часть страны, а для сырья, ввезённого и переработанного в регионе, — доставка на Мадейру. До 90% допустимых расходов (80% для компаний с лицензией Зоны Франка Мадейры), минимум расходов 7 500 €, потолок 750 000 € на заявку. Компании старше 24 месяцев с организованной бухгалтерией; одна заявка от компании, через Balcão dos Fundos. Перевозки, уже компенсированные по POSEI, не учитываются. Это конкурс: заявки оцениваются по качеству.",
+        "es": "Subvención no reembolsable que compensa los costes de transporte de mercancías soportados en 2025 por empresas que producen o transforman bienes en la Región: el envío desde Madeira al resto del país y, para materias importadas y transformadas en la Región, el transporte hasta Madeira. Hasta el 90% del gasto subvencionable (80% para empresas con licencia en la Zona Franca de Madeira), con un gasto mínimo de 7.500 € y un límite de 750.000 € por solicitud. Empresas con más de 24 meses de actividad y contabilidad organizada; una solicitud por empresa, en el Balcão dos Fundos. No cuenta el transporte ya apoyado por el POSEI. Convocatoria competitiva: las solicitudes se valoran por mérito.",
+        "de": "Nicht rückzahlbarer Zuschuss, der Transportkosten für Waren aus dem Jahr 2025 erstattet – für Unternehmen, die in der Region Waren herstellen oder verarbeiten: Versand von Madeira in das übrige Staatsgebiet und, bei eingeführten und in der Region verarbeiteten Materialien, der Transport nach Madeira. Bis zu 90 % der förderfähigen Kosten (80 % für Unternehmen mit Lizenz in der Freihandelszone Madeira), Mindestkosten 7.500 €, Obergrenze 750.000 € pro Antrag. Unternehmen mit mehr als 24 Monaten Tätigkeit und ordnungsgemäßer Buchführung; ein Antrag pro Unternehmen über den Balcão dos Fundos. Bereits über POSEI geförderte Transporte zählen nicht. Wettbewerbsaufruf: Anträge werden nach Qualität bewertet."
+      },
+      "changed": "2026-10-19"
+    },
     {
       "id": "m2030-2026-21",
       "name": "Madeira 2030 · SIEED — Eficiência Energética 2030 (Aviso M2030-2026-21): eficiência energética e descarbonização das empresas",
