@@ -1,0 +1,21 @@
+{
+  "slug": "2026-10-24-transportes",
+  "pt": {
+    "tag": "Madeira 2030 · Aviso M2030-2026-35",
+    "title": "Funcionamento 2030 – Transportes",
+    "big": "até 90%",
+    "sub": "dos custos de transporte de mercadorias de 2025",
+    "rows": [["Zona Franca", "até 80%"], ["Despesa mínima", "7 500 €"], ["Máximo por candidatura", "750 000 €"]],
+    "dl": "Candidaturas até 20.11.2026 · 17h00",
+    "site": "painel.seedwave.pt"
+  },
+  "ru": {
+    "tag": "Madeira 2030 · Aviso M2030-2026-35",
+    "title": "Компенсация перевозки товаров за 2025 год",
+    "big": "до 90%",
+    "sub": "расходов на транспорт для компаний, производящих на Мадейре",
+    "rows": [["Зона Франка", "до 80%"], ["Мин. расходы", "7 500 €"], ["Потолок на заявку", "750 000 €"]],
+    "dl": "Приём заявок до 20.11.2026 · 17:00",
+    "site": "painel.seedwave.pt/ru"
+  }
+}
