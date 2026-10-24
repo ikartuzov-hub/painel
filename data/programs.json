@@ -1,6 +1,6 @@
 {
   "_about": "Publicly visible layer of the SeedWave subsidy sensor (Notion «Мониторинг субсидий Мадейры»). Only confidence level 1 (aviso, law, official portal). Announcements without an aviso (contour B: 'awaiting opening') are never exported. The internal 'Условия' field is never exported; 'desc' is a short public summary written only from the official source.",
-  "snapshot": "2026-10-23",
+  "snapshot": "2026-10-24",
   "programs": [
     {
       "id": "m2030-2026-35",
@@ -30,6 +30,31 @@
         "de": "Nicht rückzahlbarer Zuschuss, der Transportkosten für Waren aus dem Jahr 2025 erstattet – für Unternehmen, die in der Region Waren herstellen oder verarbeiten: Versand von Madeira in das übrige Staatsgebiet und, bei eingeführten und in der Region verarbeiteten Materialien, der Transport nach Madeira. Bis zu 90 % der förderfähigen Kosten (80 % für Unternehmen mit Lizenz in der Freihandelszone Madeira), Mindestkosten 7.500 €, Obergrenze 750.000 € pro Antrag. Unternehmen mit mehr als 24 Monaten Tätigkeit und ordnungsgemäßer Buchführung; ein Antrag pro Unternehmen über den Balcão dos Fundos. Bereits über POSEI geförderte Transporte zählen nicht. Wettbewerbsaufruf: Anträge werden nach Qualität bewertet."
       },
       "changed": "2026-10-19"
+    },
+    {
+      "id": "rsaa",
+      "name": "Regime Simplificado de Arrendamento Acessível (RSAA) — isenção de IRS/IRC sobre rendas",
+      "short": "RENDA ACESSÍVEL · IRS 0%",
+      "level": "fiscal",
+      "audience": [
+        "particulares",
+        "empresas"
+      ],
+      "profiles": [],
+      "status": "open",
+      "lastStatus": "open",
+      "deadline": null,
+      "verified": "2026-10-24",
+      "source": "https://www.portaldahabitacao.pt/documents/20126/22717250/Portaria+n.%C2%BA+454+2026+1,+de+13+de+outubro.pdf/21045ab4-98d5-d2e9-10fa-9fcda6981ddc?t=1791885232383",
+      "sourceName": "Portal da Habitação · IHRU (Portaria n.º 454/2026/1)",
+      "mobility": false,
+      "desc": {
+        "pt": "Isenção total de IRS ou IRC sobre as rendas de contratos de arrendamento habitacional que respeitem o limite máximo de renda do concelho (Decreto-Lei n.º 97/2026, em vigor desde 1 de setembro de 2026). Limites na Madeira para um T2: Funchal 1 034 €, Santa Cruz 810 €, Ponta do Sol, Ribeira Brava, Santana, São Vicente, Porto Moniz e Porto Santo 898 €, Machico 671 €, Câmara de Lobos 608 €, Calheta 504 €. Mais 10% com estacionamento privativo e mais 10% com classe energética A ou superior. O contrato é comunicado no Portal das Finanças e submetido na plataforma Investir-Arrendar do IHRU até 15 de janeiro do ano seguinte.",
+        "en": "Full exemption from IRS or IRC on rent from residential leases that stay within the municipality's maximum rent (Decree-Law 97/2026, in force since 1 September 2026). Limits in Madeira for a two-bedroom (T2): Funchal €1,034, Santa Cruz €810, Ponta do Sol, Ribeira Brava, Santana, São Vicente, Porto Moniz and Porto Santo €898, Machico €671, Câmara de Lobos €608, Calheta €504. Plus 10% with private parking and another 10% with energy class A or higher. The lease is registered on the Portal das Finanças and submitted on the IHRU Investir-Arrendar platform by 15 January of the following year.",
+        "ru": "Полное освобождение от IRS или IRC арендного дохода по договорам жилой аренды, где плата не выше лимита для муниципалитета (Decreto-Lei n.º 97/2026, действует с 1 сентября 2026 года). Лимиты на Мадейре для T2: Фуншал 1 034 €, Санта-Круш 810 €, Понта-ду-Сол, Рибейра-Брава, Сантана, Сан-Висенте, Порту-Мониш и Порту-Санту 898 €, Машику 671 €, Камара-де-Лобуш 608 €, Калета 504 €. Плюс 10% при частной парковке и ещё 10% при энергоклассе A и выше. Договор регистрируется на Portal das Finanças и подаётся на платформе IHRU Investir-Arrendar до 15 января следующего года.",
+        "es": "Exención total de IRS o IRC sobre las rentas de contratos de alquiler de vivienda que respeten el límite máximo de renta del municipio (Decreto-Ley 97/2026, en vigor desde el 1 de septiembre de 2026). Límites en Madeira para un T2: Funchal 1.034 €, Santa Cruz 810 €, Ponta do Sol, Ribeira Brava, Santana, São Vicente, Porto Moniz y Porto Santo 898 €, Machico 671 €, Câmara de Lobos 608 €, Calheta 504 €. Un 10% más con aparcamiento privado y otro 10% con clase energética A o superior. El contrato se comunica en el Portal das Finanças y se presenta en la plataforma Investir-Arrendar del IHRU antes del 15 de enero del año siguiente.",
+        "de": "Vollständige Befreiung von IRS bzw. IRC auf Mieteinnahmen aus Wohnungsmietverträgen, die die Höchstmiete der Gemeinde einhalten (Gesetzesdekret 97/2026, in Kraft seit 1. September 2026). Grenzen auf Madeira für eine T2-Wohnung: Funchal 1.034 €, Santa Cruz 810 €, Ponta do Sol, Ribeira Brava, Santana, São Vicente, Porto Moniz und Porto Santo 898 €, Machico 671 €, Câmara de Lobos 608 €, Calheta 504 €. Plus 10 % bei eigenem Stellplatz und weitere 10 % ab Energieklasse A. Der Vertrag wird im Portal das Finanças gemeldet und bis 15. Januar des Folgejahres auf der IHRU-Plattform Investir-Arrendar eingereicht."
+      }
     },
     {
       "id": "m2030-2026-21",

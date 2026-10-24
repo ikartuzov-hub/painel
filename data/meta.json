@@ -1,9 +1,9 @@
 {
-  "version": "2026-10-23T23:30",
-  "exported": "2026-10-23T23:30:00+01:00",
+  "version": "2026-10-24T19:00",
+  "exported": "2026-10-24T19:00:00+01:00",
   "sources": {
     "programs": {
-      "lastCheck": "2026-10-23",
+      "lastCheck": "2026-10-24",
       "feeds": [
         "IDR",
         "Madeira 2030",
@@ -11,7 +11,8 @@
         "Fundo Ambiental",
         "Portal das Finanças",
         "SDM",
-        "IEM, IP-RAM"
+        "IEM, IP-RAM",
+        "IHRU"
       ]
     },
     "seminars": {
