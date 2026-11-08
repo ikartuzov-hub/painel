@@ -1,0 +1,21 @@
+{
+  "slug": "2026-11-08-renda-2300",
+  "pt": {
+    "tag": "IRS · Renda moderada 2026",
+    "title": "Renda mais baixa — o senhorio ganha mais",
+    "big": "10%",
+    "sub": "de IRS em vez de 25% em rendas até 2 300 € por mês",
+    "rows": [["2 500 € × 12 − 25%", "22 500 €"], ["2 300 € × 12 − 10%", "24 840 €"], ["Diferença por ano", "+2 340 €"]],
+    "dl": "",
+    "site": "ajuda.seedwave.pt/renda"
+  },
+  "ru": {
+    "tag": "IRS · умеренная аренда 2026",
+    "title": "Аренду снизили — а хозяин заработал больше",
+    "big": "10%",
+    "sub": "налога вместо 25% при аренде до 2 300 € в месяц",
+    "rows": [["2 500 € × 12 − 25%", "22 500 €"], ["2 300 € × 12 − 10%", "24 840 €"], ["Разница за год", "+2 340 €"]],
+    "dl": "",
+    "site": "ajuda.seedwave.pt/renda/ru"
+  }
+}
