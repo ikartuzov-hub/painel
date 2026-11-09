@@ -359,7 +359,7 @@
   }
   function footer(el) {
     el.innerHTML = '<p class="disc">' + esc(t("disclaimer")) + "</p>" +
-      '<p class="copy">© ' + new Date().getFullYear() + ' <a href="' + hubHome() + '">SeedWave</a> · <a href="' +
+      '<p class="copy">© ' + new Date().getFullYear() + ' <a href="' + hubHome() + '">SeedWave</a> · <a href="https://seedwave.pt/madeira/?lang=' + lang + '&utm_source=painel&utm_medium=footer">Madeira</a> · <a href="' +
       REG.linkedin + '" rel="author">Igor Kartuzov</a></p>';
   }
   function stamp(p) { return t("verified", { d: fmtDate(p.verified) }); }
