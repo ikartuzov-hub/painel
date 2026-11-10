@@ -1,0 +1,21 @@
+{
+  "slug": "2026-11-10-cmd-pin",
+  "pt": {
+    "tag": "Chave Móvel Digital · gov.pt",
+    "title": "Onde está a minha Chave Móvel Digital?",
+    "big": "Número + PIN",
+    "sub": "Não está na gaveta: a chave é o seu telemóvel + o PIN que escolheu",
+    "rows": [["PIN de entrada", "4–8 dígitos"], ["Código de confirmação", "6 dígitos"], ["PIN de assinatura", "5 erros → desliga"]],
+    "dl": "",
+    "site": "ajuda.seedwave.pt/cmd"
+  },
+  "ru": {
+    "tag": "Chave Móvel Digital · gov.pt",
+    "title": "Где моя Chave Móvel Digital?",
+    "big": "Номер + PIN",
+    "sub": "Ключ не лежит в ящике: это ваш телефон + PIN, который вы придумали",
+    "rows": [["PIN входа", "4–8 цифр"], ["Код подтверждения", "6 цифр"], ["PIN подписи", "5 ошибок → отключён"]],
+    "dl": "",
+    "site": "ajuda.seedwave.pt/cmd/ru"
+  }
+}
